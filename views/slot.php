@@ -66,7 +66,7 @@ $details = $wpdb->get_results (
     "
     SELECT *
     FROM $table_name
-    WHERE slot_sno = $slot_sno
+    WHERE slot_sno = $slot_sno_from_url
     "
 );  
 foreach($details as $key=>$val)
