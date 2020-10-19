@@ -131,7 +131,9 @@ function custom_rewrite_basic() {
 
     add_rewrite_rule('^minute-(.)+/slot-(.)+/bid', 'wp-content/plugins/kairoiauction/views/bid.php', 'top');
 	
-	add_rewrite_rule('^minute-(.)+/vote', 'wp-content/plugins/kairoiauction/views/vote.php', 'top');
+	add_rewrite_rule('^minute-(.)+/vote/slot-(.)+', 'wp-content/plugins/kairoiauction/views/vote.php', 'top');
+
+	add_rewrite_rule('^minute-(.)+/vote', 'wp-content/plugins/kairoiauction/views/vote-show-slots.php', 'top');
 
     add_rewrite_rule('^minute-(.)+/slot-(.)+', 'wp-content/plugins/kairoiauction/views/slot.php', 'top');
     

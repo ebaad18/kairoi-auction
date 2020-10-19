@@ -77,8 +77,7 @@ function get_slot_sno(){
             //echo '<a style="text-align:center" href="slot-'.$slot_sno.'/">Slot '.($key+1).'</a><br>';
             $count++;
             
-        }
-        echo $count;    
+        }  
     if ($count == 0)
     {
         global $slot_time_sno;
