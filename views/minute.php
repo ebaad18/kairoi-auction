@@ -24,22 +24,21 @@ $parts = parse_url($link);
 
 //for offset parameters
 $broken_parts= @explode('-', $parts[path]); //@ is used to suppress warnings
-$time = end($broken_parts);
-$time = rtrim($time,'/');
+$time_from_url = end($broken_parts);
+$time_from_url = rtrim($time_from_url,'/');
 
 
 ?>
-<h2 class="time-slot-heading" style="text-align:center"> <?php echo $time; ?> minutes slots</h2> 
+<h2 class="time-slot-heading" style="text-align:center"> <?php echo $time_from_url; ?> minutes slots</h2> 
 <?php
-GLOBAL $time;
-GLOBAL $max_no;
+GLOBAL $time_from_url;
 $table_name = 'wp_kairoi_slot_time';
 global $wpdb;
 $details = $wpdb->get_results (
         "
         SELECT *
         FROM $table_name
-        WHERE time = $time
+        WHERE time = $time_from_url
         "
     );  
 foreach($details as $key=>$val)
@@ -67,25 +66,39 @@ foreach($details as $key=>$val)
         echo '<a style="text-align:center" href="slot-'.$slot_sno.'/">Slot '.($key+1).'</a><br>';
         $count++;
     }  
-echo $count;
+// echo $count;
 if(array_key_exists('create_new_time_slot', $_POST)) { 
     button1(); 
 } 
 function button1() //creating new time slots
-{
-    global $wpdb;
-    GLOBAL $slot_time_sno;
-    $wpdb->insert("wp_kairoi_slots", array(
-   "slot_time_sno" => $slot_time_sno,
-   "created_on" => date('Y-m-d H:i:s'),
-)); 
-@header("Refresh:0");
-} 
+{   
+    global $count;
+    global $max_no;
+    if ($count >= $max_no){
+        echo "<script> alert('Maximum slots have already been created'); </script>";
+    } 
+    else{
+        global $wpdb;
+        GLOBAL $slot_time_sno;
+        $wpdb->insert("wp_kairoi_slots", array(
+    "slot_time_sno" => $slot_time_sno,
+    "created_on" => date('Y-m-d H:i:s'),
+    )); 
+        global $key;
+        global $slot_sno;
+        if($key == 0 && $count == 0)
+        echo '<a style="text-align:center" href="slot-'.$slot_sno.'/">Slot '.($key+1).'</a><br>';
+        else
+        echo '<a style="text-align:center" href="slot-'.$slot_sno.'/">Slot '.($key+2).'</a><br>';
+        $count++;
+    } 
+}
+    
 ?>  
 
 <form method="post"> 
     <input type="submit" name="create_new_time_slot"
-            class="button" value="Create New Slot" <?php if ($count >= $max_no){ ?> disabled <?php   } ?>/> 
+            class="button" value="Create New Slot"/> 
 </form>
 
 <script>

@@ -40,7 +40,7 @@ $details = $wpdb->get_results (
     );  
 foreach($details as $key=>$val)
     {			
-        $slot_time_sno = $val->slot_time_sno;
+        $slot_time_sno = $val->slot_time_sno; //getting the slot time serial number for getting access to slots for the slot time
     }
 
 $table_name = 'wp_kairoi_slots';
@@ -56,7 +56,7 @@ foreach($details as $key=>$val)
     {			
         $slot_sno = $val->slot_sno;
         if($slot_sno == $slot_sno_from_url){
-            $slot_index = ($key+1);
+        $slot_index = ($key+1);
         }
     }    
 $count_of_bids_in_a_slot = 0;
@@ -81,9 +81,9 @@ foreach($details as $key=>$val)
 
 <h2 class="slot-heading" style="text-align:center">
 
-    <a style="float:left; margin-left:5%" href="bid" <?php if ($count_of_bids_in_a_slot >= 5){ ?> class="disabled-links" <?php   } ?>>Bid</a>
+    <a style="float:left; margin-left:5%" href="bid/" <?php if ($count_of_bids_in_a_slot >= 5){ ?> class="disabled-links" <?php   } ?>>Bid</a>
     <?php echo $minute_from_url; ?> minutes Slot <?php echo $slot_index; ?>
-    <a style="float:right; margin-right:5%"  href="vote">Vote</a>
+    <a style="float:right; margin-right:5%"  href="vote/">Vote</a>
 </h2> 
 
 <h4><?php echo $content; ?></h4>

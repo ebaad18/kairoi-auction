@@ -66,7 +66,8 @@ function button1($nickname,$description) //creating new time slots
     "votes" => 0,    
     "bidded_on" => date('Y-m-d H:i:s'),
 )); 
-@header("Refresh:0");
+echo "<script> location.href='thank-you'; </script>";
+exit();
 } 
 ?>
 
