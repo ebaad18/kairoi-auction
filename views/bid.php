@@ -44,6 +44,22 @@ function button1($nickname,$description) //creating new time slots
         "nickname" => $nickname,
         "voted_bids" => 'vrr',
      )); 
+    
+    $table_name = 'wp_kairoi_slots';
+    global $wpdb;
+    $details = $wpdb->get_results (
+            "
+            SELECT *
+            FROM $table_name
+            WHERE slot_sno = $slot_sno_from_url
+            "
+        );  
+    foreach($details as $key=>$val)
+        {			
+            $no_of_bids = $val->no_of_bids;
+        }
+    
+    $wpdb->update('wp_kairoi_slots', array('no_of_bids'=>($no_of_bids +1)), array('slot_sno'=>$slot_sno_from_url));  
 
     $table_name = 'wp_kairoi_bidding_users';
     global $wpdb;

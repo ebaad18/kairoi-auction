@@ -66,6 +66,7 @@ function on_activate()
 						slot_sno INT NOT NULL AUTO_INCREMENT,
 						slot_time_sno INT NOT NULL,
 						created_on DATETIME NOT NULL,
+						no_of_bids INT NOT NULL,
 						PRIMARY KEY  (slot_sno),
                         FOREIGN KEY (slot_time_sno) REFERENCES wp_kairoi_slot_time(slot_time_sno)
 		) $charset_collate;";
@@ -129,7 +130,8 @@ function custom_rewrite_basic() {
     add_rewrite_rule('^minute-(.)+/slot-(.)+/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)', 'wp-content/plugins/kairoiauction/views/error.php', 'top');
 
     add_rewrite_rule('^minute-(.)+/slot-(.)+/bid', 'wp-content/plugins/kairoiauction/views/bid.php', 'top');
-    add_rewrite_rule('^minute-(.)+/slot-(.)+/vote', 'wp-content/plugins/kairoiauction/views/vote.php', 'top');
+	
+	add_rewrite_rule('^minute-(.)+/vote', 'wp-content/plugins/kairoiauction/views/vote.php', 'top');
 
     add_rewrite_rule('^minute-(.)+/slot-(.)+', 'wp-content/plugins/kairoiauction/views/slot.php', 'top');
     

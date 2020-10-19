@@ -29,11 +29,12 @@ $time_from_url = rtrim($time_from_url,'/');
 
 
 ?>
-<h2 class="time-slot-heading" style="text-align:center"> <?php echo $time_from_url; ?> minutes slots</h2> 
+<h2 class="time-slot-heading" style="text-align:center"> <?php echo $time_from_url; ?> minutes</h2> 
 <?php
-GLOBAL $time_from_url;
+global $time_from_url;
 $table_name = 'wp_kairoi_slot_time';
 global $wpdb;
+global $no_of_bids;
 $details = $wpdb->get_results (
         "
         SELECT *
@@ -49,57 +50,100 @@ foreach($details as $key=>$val)
 
 //get slots of a particular minute
 
-$count = 0;
-$table_name = 'wp_kairoi_slots';
 global $wpdb;
 global $count;
-$details = $wpdb->get_results (
-        "
-        SELECT *
-        FROM $table_name
-        WHERE slot_time_sno = $slot_time_sno
-        "
-    );  
-foreach($details as $key=>$val)
-    {	
-        $slot_sno = $val->slot_sno;		
-        echo '<a style="text-align:center" href="slot-'.$slot_sno.'/">Slot '.($key+1).'</a><br>';
-        $count++;
-    }  
-// echo $count;
-if(array_key_exists('create_new_time_slot', $_POST)) { 
-    button1(); 
-} 
-function button1() //creating new time slots
-{   
+get_slot_sno();
+
+function get_slot_sno(){
+    global $slot_time_sno;
+    global $wpdb;
     global $count;
+    $count = 0;
+    global $slot_sno;
+    global $no_of_bids;
     global $max_no;
-    if ($count >= $max_no){
-        echo "<script> alert('Maximum slots have already been created'); </script>";
+    $table_name = 'wp_kairoi_slots';
+    $details = $wpdb->get_results (
+            "
+            SELECT *
+            FROM $table_name
+            WHERE slot_time_sno = $slot_time_sno
+            "
+        );  
+    foreach($details as $key=>$val)
+        {	
+            $slot_sno = $val->slot_sno;	
+            $no_of_bids = $val->no_of_bids;	
+            //echo '<a style="text-align:center" href="slot-'.$slot_sno.'/">Slot '.($key+1).'</a><br>';
+            $count++;
+            
+        }
+        echo $count;    
+    if ($count == 0)
+    {
+        global $slot_time_sno;
+        global $wpdb;
+        $wpdb->insert("wp_kairoi_slots", array(
+        "slot_time_sno" => $slot_time_sno,
+        "no_of_bids" => 0,
+        "created_on" => date('Y-m-d H:i:s'),
+        ));
+        get_slot_sno(); 
     } 
     else{
-        global $wpdb;
-        GLOBAL $slot_time_sno;
-        $wpdb->insert("wp_kairoi_slots", array(
-    "slot_time_sno" => $slot_time_sno,
-    "created_on" => date('Y-m-d H:i:s'),
-    )); 
-        global $key;
-        global $slot_sno;
-        if($key == 0 && $count == 0)
-        echo '<a style="text-align:center" href="slot-'.$slot_sno.'/">Slot '.($key+1).'</a><br>';
-        else
-        echo '<a style="text-align:center" href="slot-'.$slot_sno.'/">Slot '.($key+2).'</a><br>';
-        $count++;
-    } 
+        if($count <= $max_no){
+            if( $no_of_bids >=5){
+                global $slot_time_sno;
+                global $wpdb;
+                $wpdb->insert("wp_kairoi_slots", array(
+                "slot_time_sno" => $slot_time_sno,
+                "no_of_bids" => 0,
+                "created_on" => date('Y-m-d H:i:s'),
+                ));
+                get_slot_sno();
+            }
+        }
+        else{
+            echo "<script> alert('All slots have already been bidded on'); </script>";
+            echo "<a style='text-align:center'  href='vote/'>Vote</a>";
+            exit();
+        }
+    }  
 }
+    
+// echo $count;
+// if(array_key_exists('create_new_time_slot', $_POST)) { 
+//     button1(); 
+// } 
+// function button1() //creating new time slots
+// {   
+//     global $count;
+//     global $max_no;
+//     if ($count >= $max_no){
+//         echo "<script> alert('Maximum slots have already been created'); </script>";
+//     } 
+//     else{
+//         global $wpdb;
+//         GLOBAL $slot_time_sno;
+//         $wpdb->insert("wp_kairoi_slots", array(
+//     "slot_time_sno" => $slot_time_sno,
+//     "created_on" => date('Y-m-d H:i:s'),
+//     )); 
+//         global $key;
+//         global $slot_sno;
+//         if($key == 0 && $count == 0)
+//         echo '<a style="text-align:center" href="slot-'.$slot_sno.'/">Slot '.($key+1).'</a><br>';
+//         else
+//         echo '<a style="text-align:center" href="slot-'.$slot_sno.'/">Slot '.($key+2).'</a><br>';
+//         $count++;
+//     } 
+// }
     
 ?>  
 
-<form method="post"> 
+<!-- <form method="post"> 
     <input type="submit" name="create_new_time_slot"
             class="button" value="Create New Slot"/> 
-</form>
-
-<script>
-</script>
+</form> -->
+<a style="float:left; margin-left:5%" href="slot-<?php echo $slot_sno?>/bid/">Bid</a>
+<a style="float:right; margin-right:5%"  href="vote/">Vote</a>
