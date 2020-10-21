@@ -1,6 +1,8 @@
 <?php 
 require_once("../../../../wp-load.php");
 get_header(); //import header 
+
+
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
     $link = "https"; 
 else
@@ -29,7 +31,7 @@ $minute_from_url = rtrim($minute_from_url,'/slot');
 
 
 if(array_key_exists('create_new_bid', $_POST)) { 
-    echo $_POST["nickname"];
+    //echo $_POST["nickname"];
     button1($_POST["nickname"],$_POST["description"],$_POST["email"]); 
 } 
 function button1($nickname,$description,$email) //creating new time slots
@@ -71,12 +73,30 @@ function button1($nickname,$description,$email) //creating new time slots
     foreach($details as $key=>$val)
         {			
             $temp = $val->user_sno;
-        } 
+        }
+    
+    //whether ip is from share internet
+    if (!empty($_SERVER['HTTP_CLIENT_IP']))   
+    {
+    $ip_address = $_SERVER['HTTP_CLIENT_IP'];
+    }
+    //whether ip is from proxy
+    elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))  
+    {
+    $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+    //whether ip is from remote address
+    else
+    {
+    $ip_address = $_SERVER['REMOTE_ADDR'];
+    }
+    echo $ip_address;
 
     $wpdb->insert("wp_kairoi_bids", array(
     "slot_sno" => $slot_sno_from_url,
     "user_sno" => $temp,
     "description" => $description,
+    "ip" => $ip_address,
     "votes" => 0,    
     "bidded_on" => date('Y-m-d H:i:s'),
 )); 

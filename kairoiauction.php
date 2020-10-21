@@ -40,7 +40,7 @@ function on_activate()
         if (count($wpdb->get_results("SHOW TABLES LIKE 'wp_kairoi_bidding_users'"))==0){
         $table = "CREATE TABLE wp_kairoi_bidding_users (
                         user_sno INT NOT NULL AUTO_INCREMENT,
-                        email VARCHAR(20),
+                        email VARCHAR(30),
 						nickname VARCHAR (40),
                         voted_bids VARCHAR (1000) NOT NULL,
                         PRIMARY KEY  (user_sno)
@@ -76,6 +76,7 @@ function on_activate()
 						slot_sno INT NOT NULL,
 						user_sno INT NOT NULL,
 						description VARCHAR(250) NOT NULL,
+						ip VARCHAR(20) NOT NULL,
 						votes INT NOT NULL,
 						bidded_on DATETIME NOT NULL,
 						PRIMARY KEY  (bid_sno),
