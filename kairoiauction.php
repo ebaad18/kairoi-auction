@@ -16,7 +16,6 @@ if (! defined( 'kairoiauction_url' ) ) {
 	define('kairoiauction_url',plugins_url().'/kairoiauction');
 }
 
-
 /**
 *Logic to be executed on plugin initialization
 */
@@ -41,13 +40,11 @@ function on_activate()
         if (count($wpdb->get_results("SHOW TABLES LIKE 'wp_kairoi_bidding_users'"))==0){
         $table = "CREATE TABLE wp_kairoi_bidding_users (
                         user_sno INT NOT NULL AUTO_INCREMENT,
-                        ID BIGINT(20) UNSIGNED NOT NULL,
+                        email VARCHAR(20),
 						nickname VARCHAR (40),
                         voted_bids VARCHAR (1000) NOT NULL,
-                        PRIMARY KEY  (user_sno),
-                        FOREIGN KEY (ID) REFERENCES wp_users(ID)
-
-		) $charset_collate;";
+                        PRIMARY KEY  (user_sno)
+		)$charset_collate;";
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php'); //to call dbDelta
 		dbDelta($table); //dbDelta function is located at upgrade.php
 	}

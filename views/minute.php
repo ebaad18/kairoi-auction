@@ -2,7 +2,6 @@
 
 require_once("../../../../wp-load.php");
 get_header(); //import header 
-if ( is_user_logged_in() ){
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
     $link = "https"; 
 else
@@ -53,18 +52,18 @@ foreach($details as $key=>$val)
 global $wpdb;
 global $count;
 get_slot_sno();
-}
-else{
-    echo "<div id='snackbar'>Please log in</div>
+
+// else{
+//     echo "<div id='snackbar'>Please log in</div>
     
-    <script>
+//     <script>
     
-      var x = document.getElementById('snackbar');
-      x.className = 'show';
-      setTimeout(function(){ x.className = x.className.replace('show', ''); }, 3000);
-      window.location.assign('http://localhost/kairoi/wp-admin');
-    </script>";
-}
+//       var x = document.getElementById('snackbar');
+//       x.className = 'show';
+//       setTimeout(function(){ x.className = x.className.replace('show', ''); }, 3000);
+//       window.location.assign('http://localhost/kairoi/wp-admin');
+//     </script>";
+// }
 function get_slot_sno(){
     global $slot_time_sno;
     global $wpdb;
@@ -134,7 +133,9 @@ function get_slot_sno(){
     <input type="submit" name="create_new_time_slot"
             class="button" value="Create New Slot"/> 
 </form> -->
+<span style="font-size:40px;cursor:pointer;position:absolute;right:0;margin-right:2%" onclick="openNav()">&#9776;</span> 
 <div style="position:relative; max-height:80%; max-width:100%; text-align:center; margin-top: 10%;" >
+
     <image src="../wp-content/plugins/kairoiauction/assets/minute-page-bg.png" >
     <h2 class="main-heading-center"  style="position:absolute; 
     top: -5%;
@@ -162,3 +163,20 @@ function get_slot_sno(){
     color:white;
     font-family:Raleway;">Vote for best bid</a></h3>
 </div>
+<div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#"><h4>About</h4></a>
+        <a href="#"><h4>Instructions</h4></a>
+        <a href="#"><h4>Rules</h4></a>
+        <a href="#"><h4>Winners</h4></a>
+        <a href="#"><h4>Contact</h4></a>
+</div>
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>

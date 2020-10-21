@@ -22,25 +22,42 @@ function kairoi_auction_main(){
             $count++;	
             
         }
+
+    $table_name = 'wp_kairoi_auction_master';
+    $details = $wpdb->get_results (
+            "
+            SELECT *
+            FROM $table_name
+            "
+        );  
+    foreach($details as $key=>$val)
+        {	
+            $total_time = $val->total_time;
+            
+        }
     
     
 ?>
     
-
     <div style="position:relative; max-height:80%; max-width:100%; text-align:center" >
+    <span style="font-size:40px;cursor:pointer;position:absolute;right:0;margin-right:2%" onclick="openNav()">&#9776;</span> 
+    
     <image id="bg-img" src="wp-content/plugins/kairoiauction/assets/main-page-bg-1.png" >
 
-    <?php for($i = 0 ; $i < 50 ; $i++){
+    <?php 
+        if($count>1){
+        for($i = 0 ; $i < 30 ; $i++){
         echo "<h5 class='floating' style='color:#00687f;
-        position:absolute; 
+        position:absolute;
+        z-index:4; 
         left:".rand(0,90)."%;  top:".rand(0,85)."%; opacity:0.".rand(0,100)."'>".$array_for_display[(rand(0,$count-1))]."<br>";
-    }?>
+    }}?>
     
     <h1 class="main-heading-center" onclick="add_styles()" style="position:absolute; 
     top: 50%;
     left:49%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);">33574</h1>
+    -ms-transform: translate(-50%, -50%);"><?php echo $total_time ?></h1>
 
     <h4 class="time-slots-main-page-heading" style="position:absolute; 
     top: 2%;
@@ -85,6 +102,17 @@ function kairoi_auction_main(){
     -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-1440/">1 day</a> </h4>
 
     </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#"><h4>About</h4></a>
+        <a href="#"><h4>Instructions</h4></a>
+        <a href="#"><h4>Rules</h4></a>
+        <a href="#"><h4>Winners</h4></a>
+        <a href="#"><h4>Contact</h4></a>
+    </div>
+
+
     
     <script>
         // var temp = document.getElementsByClassName("site-content")[0];
@@ -96,11 +124,18 @@ function kairoi_auction_main(){
                 var obj = document.getElementsByClassName("time-slot")[w];
                 obj.setAttribute("style", "color:black !important;pointer-events:auto;");
             }
-            for(let w = 0; w <50 ; w++){
+            for(let w = 0; w <30 ; w++){
                 var obj = document.getElementsByClassName("floating")[w];
                 obj.setAttribute("style", "display:none");
             }      
         }
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            }
     </script>
 <?php
 }
