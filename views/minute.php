@@ -149,7 +149,8 @@ function get_slot_sno(){
     -ms-transform: translate(-50%, -50%);
     background:#00687f;
     padding:5px;
-    color:white;">Start bidding</a></h3>
+    color:white;
+    font-family:Raleway;">Start bidding</a></h3>
     
     <h3><a href="vote/" style="position:absolute; 
     top: 81%;
@@ -158,5 +159,6 @@ function get_slot_sno(){
     -ms-transform: translate(-50%, -50%);
     background:#00687f;
     padding:5px;
-    color:white;">Vote for best bid</a></h3>
+    color:white;
+    font-family:Raleway;">Vote for best bid</a></h3>
 </div>
