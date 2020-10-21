@@ -2,7 +2,7 @@
 
 require_once("../../../../wp-load.php");
 get_header(); //import header 
-
+if ( is_user_logged_in() ){
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
     $link = "https"; 
 else
@@ -29,7 +29,7 @@ $time_from_url = rtrim($time_from_url,'/');
 
 
 ?>
-<h2 class="time-slot-heading" style="text-align:center"> <?php echo $time_from_url; ?> minutes</h2> 
+
 <?php
 global $time_from_url;
 $table_name = 'wp_kairoi_slot_time';
@@ -53,7 +53,18 @@ foreach($details as $key=>$val)
 global $wpdb;
 global $count;
 get_slot_sno();
-
+}
+else{
+    echo "<div id='snackbar'>Please log in</div>
+    
+    <script>
+    
+      var x = document.getElementById('snackbar');
+      x.className = 'show';
+      setTimeout(function(){ x.className = x.className.replace('show', ''); }, 3000);
+      window.location.assign('http://localhost/kairoi/wp-admin');
+    </script>";
+}
 function get_slot_sno(){
     global $slot_time_sno;
     global $wpdb;
@@ -103,46 +114,49 @@ function get_slot_sno(){
             }
         }
         else{
-            echo "<script> alert('All slots have already been bidded on'); </script>";
+            echo "<div id='snackbar'>All slots have been bidded on.</div>
+    
+            <script>
+
+            var x = document.getElementById('snackbar');
+            x.className = 'show';
+            setTimeout(function(){ x.className = x.className.replace('show', ''); }, 3000);
+
+            </script>";
             echo "<a style='text-align:center'  href='vote/'>Vote</a>";
             exit();
         }
     }  
-}
-    
-// echo $count;
-// if(array_key_exists('create_new_time_slot', $_POST)) { 
-//     button1(); 
-// } 
-// function button1() //creating new time slots
-// {   
-//     global $count;
-//     global $max_no;
-//     if ($count >= $max_no){
-//         echo "<script> alert('Maximum slots have already been created'); </script>";
-//     } 
-//     else{
-//         global $wpdb;
-//         GLOBAL $slot_time_sno;
-//         $wpdb->insert("wp_kairoi_slots", array(
-//     "slot_time_sno" => $slot_time_sno,
-//     "created_on" => date('Y-m-d H:i:s'),
-//     )); 
-//         global $key;
-//         global $slot_sno;
-//         if($key == 0 && $count == 0)
-//         echo '<a style="text-align:center" href="slot-'.$slot_sno.'/">Slot '.($key+1).'</a><br>';
-//         else
-//         echo '<a style="text-align:center" href="slot-'.$slot_sno.'/">Slot '.($key+2).'</a><br>';
-//         $count++;
-//     } 
-// }
-    
+}    
 ?>  
 
 <!-- <form method="post"> 
     <input type="submit" name="create_new_time_slot"
             class="button" value="Create New Slot"/> 
 </form> -->
-<a style="float:left; margin-left:5%" href="slot-<?php echo $slot_sno?>/bid/">Bid</a>
-<a style="float:right; margin-right:5%"  href="vote/">Vote</a>
+<div style="position:relative; max-height:80%; max-width:100%; text-align:center; margin-top: 10%;" >
+    <image src="../wp-content/plugins/kairoiauction/assets/minute-page-bg.png" >
+    <h2 class="main-heading-center"  style="position:absolute; 
+    top: -5%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);"> <?php echo $time_from_url; ?> minutes</h2> 
+    
+    <h3><a href="slot-<?php echo $slot_sno?>/bid/" style="position:absolute; 
+    top: 81%;
+    left:40%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background:#00687f;
+    padding:5px;
+    color:white;">Start bidding</a></h3>
+    
+    <h3><a href="vote/" style="position:absolute; 
+    top: 81%;
+    left:60%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background:#00687f;
+    padding:5px;
+    color:white;">Vote for best bid</a></h3>
+</div>

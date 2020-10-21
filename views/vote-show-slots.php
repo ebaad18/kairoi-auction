@@ -41,7 +41,7 @@ foreach($details as $key=>$val)
     }
 ?>
 
-<h2 class="time-slot-heading" style="text-align:center"> Vote for <?php echo $time_from_url; ?> minutes slots</h2> 
+<h2 class="time-slot-heading" style="text-align:center"> Vote for bids in the <?php echo $time_from_url; ?> minutes slots</h2> 
 
 <?php
 

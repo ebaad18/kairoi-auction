@@ -1,7 +1,7 @@
 <?php 
 require_once("../../../../wp-load.php");
 get_header(); //import header 
-
+if ( is_user_logged_in() ){
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
     $link = "https"; 
 else
@@ -33,6 +33,19 @@ if(array_key_exists('create_new_bid', $_POST)) {
     echo $_POST["nickname"];
     button1($_POST["nickname"],$_POST["description"]); 
 } 
+
+}
+else{
+    echo "<div id='snackbar'>Please log in</div>
+    
+    <script>
+    
+      var x = document.getElementById('snackbar');
+      x.className = 'show';
+      setTimeout(function(){ x.className = x.className.replace('show', ''); }, 3000);
+      window.location.assign('http://localhost/kairoi/wp-admin');
+    </script>";
+}
 function button1($nickname,$description) //creating new time slots
 {
     global $wpdb;
@@ -84,12 +97,40 @@ function button1($nickname,$description) //creating new time slots
 )); 
 echo "<script> location.href='thank-you'; </script>";
 exit();
-} 
+}     
 ?>
+<h2 class="main-heading-center"  style="position:absolute; 
+    top: 20%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);"> <?php echo $minute_from_url; ?> minutes</h2>
+    <form method="post"> 
+    
 
-<form method="post"> 
-    <input type="text" name="nickname" placeholder="Enter Nickname"/>
-    <textarea name="description" rows="3" placeholder="Enter Description"></textarea>
+    <input type="text" name="nickname" placeholder="Enter Temporal Name" style="position:absolute; 
+    top: 40%;
+    left:50%;
+    width: 55%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);"/>
+
+    <textarea maxlength="50" name="description" rows="3" placeholder="Enter Description"
+    style="position:absolute; 
+    top: 55%;
+    left:50%;
+    width: 55%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);"></textarea>
+
+    
     <input type="submit" name="create_new_bid"
-            class="button" value="Create New Bid"/> 
+            class="button" value="Send" style="position:absolute; 
+    top: 70%;
+    left:50%;
+    border-radius: 0px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background:#00687f;
+    padding:5px;
+    color:white;"/> 
 </form>
