@@ -57,7 +57,8 @@ function button1($description_from_form){
             $bid_sno = $val->bid_sno;
         }
     
-    $wpdb->update('wp_kairoi_bids', array('votes'=>($votes +1)), array('bid_sno'=>$bid_sno));  
+    $wpdb->update('wp_kairoi_bids', array('votes'=>($votes +1)), array('bid_sno'=>$bid_sno));    
+    echo "<script> location.href='thank-you'; </script>";
 }
 
 global $wpdb;
@@ -73,7 +74,7 @@ $details = $wpdb->get_results (
 foreach($details as $key=>$val)
     {			
         $description = $val->description;
-        echo "<input type='radio' name='radio-buttons-for-voting' id='vote-".$key."' value='".$description."'>
+        echo "<input checked type='radio' name='radio-buttons-for-voting' id='vote-".$key."' value='".$description."'>
                             <label style='font-family:Raleway;font-size:28px;font-weight:bold' for='".$key."'> ".$description."</label><br><br>";
     }
     echo "
@@ -82,6 +83,7 @@ foreach($details as $key=>$val)
             </form></div>"
 ?>
 
+<h3 id="modal" style="color:red;">NVOJNVNVOINVIORNVIONVRIORNIVNI</h3>
 
 
 

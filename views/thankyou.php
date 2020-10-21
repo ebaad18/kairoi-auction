@@ -24,7 +24,7 @@ else{
     top: -5%;
     left:50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> Thank you for bidding!</h2> 
+    -ms-transform: translate(-50%, -50%);"> Thank you for engaging!</h2> 
     
 
     <a href="../../../" style="position:absolute; 

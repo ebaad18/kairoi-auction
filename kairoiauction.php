@@ -126,7 +126,8 @@ add_shortcode( 'kairoi-auction', 'kairoi_auction_main' );
 *To redirect URLs to other php files stored in the views folder
 */
 function custom_rewrite_basic() {
-    add_rewrite_rule('^minute-(.)+/slot-(.)+/([A-Za-z0-9-]+)/thank-you', 'wp-content/plugins/kairoiauction/views/thankyou.php', 'top');
+	add_rewrite_rule('^minute-(.)+/slot-(.)+/([A-Za-z0-9-]+)/thank-you', 'wp-content/plugins/kairoiauction/views/thankyou.php', 'top');
+	add_rewrite_rule('^minute-(.)+/vote/slot-(.)+/thank-you', 'wp-content/plugins/kairoiauction/views/thankyou.php', 'top');
     add_rewrite_rule('^minute-(.)+/slot-(.)+/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)', 'wp-content/plugins/kairoiauction/views/error.php', 'top');
 
     add_rewrite_rule('^minute-(.)+/slot-(.)+/bid', 'wp-content/plugins/kairoiauction/views/bid.php', 'top');
