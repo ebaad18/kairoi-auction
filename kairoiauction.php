@@ -136,7 +136,13 @@ function custom_rewrite_basic() {
 
     add_rewrite_rule('^minute-(.)+/slot-(.)+', 'wp-content/plugins/kairoiauction/views/slot.php', 'top');
     
-    add_rewrite_rule('^minute-(.)+', 'wp-content/plugins/kairoiauction/views/minute.php', 'top');
+	add_rewrite_rule('^minute-(.)+', 'wp-content/plugins/kairoiauction/views/minute.php', 'top');
+	
+	add_rewrite_rule('^about', 'wp-content/plugins/kairoiauction/views/about.php', 'top');
+	add_rewrite_rule('^instructions', 'wp-content/plugins/kairoiauction/views/instructions.php', 'top');
+	add_rewrite_rule('^rules', 'wp-content/plugins/kairoiauction/views/rules.php', 'top');
+	add_rewrite_rule('^contact', 'wp-content/plugins/kairoiauction/views/contact.php', 'top');
+	add_rewrite_rule('^winners', 'wp-content/plugins/kairoiauction/views/winners.php', 'top');
 }
 add_action('init', 'custom_rewrite_basic');
 ?>
