@@ -33,6 +33,7 @@ function kairoi_auction_main(){
     foreach($details as $key=>$val)
         {	
             $total_time = $val->total_time;
+            $time_consumed = $val->time_consumed;
             
         }
     
@@ -57,7 +58,7 @@ function kairoi_auction_main(){
     top: 50%;
     left:49%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"><?php echo $total_time ?></h1>
+    -ms-transform: translate(-50%, -50%);"><?php echo ($total_time - $time_consumed) ?></h1>
 
     <h4 class="time-slots-main-page-heading" style="position:absolute; 
     top: 2%;

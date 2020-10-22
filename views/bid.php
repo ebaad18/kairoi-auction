@@ -60,7 +60,25 @@ function button1($nickname,$description,$email) //creating new time slots
             $no_of_bids = $val->no_of_bids;
         }
     
-    $wpdb->update('wp_kairoi_slots', array('no_of_bids'=>($no_of_bids +1)), array('slot_sno'=>$slot_sno_from_url));  
+    $wpdb->update('wp_kairoi_slots', array('no_of_bids'=>($no_of_bids +1)), array('slot_sno'=>$slot_sno_from_url));
+    
+    if(($no_of_bids+1) == 5)
+    {
+        $table_name = 'wp_kairoi_auction_master';
+        global $wpdb;
+        $details = $wpdb->get_results (
+                "
+                SELECT *
+                FROM $table_name
+                "
+            );  
+        foreach($details as $key=>$val)
+            {			
+                $time_consumed = $val->time_consumed;
+            }
+    
+        $wpdb->update('wp_kairoi_auction_master', array('time_consumed'=>($time_consumed +5)), array('sno'=>1));
+    }
 
     $table_name = 'wp_kairoi_bidding_users';
     global $wpdb;
@@ -120,7 +138,7 @@ exit();
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"/>
 
-    <input type="text" name="email" placeholder="Enter Email" style="position:absolute; 
+    <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email" style="position:absolute; 
     top: 50%;
     left:50%;
     width: 55%;
