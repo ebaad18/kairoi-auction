@@ -79,16 +79,16 @@ hr{
   <div class="col-empty">
   </div>
   <div class="col-text">
-    <h4 style="font-family:'Raleway';color:white">Total Time: <?php echo $total_time ?></h4>
+    <h3 style="font-family:'Raleway';color:white;font-weight:bold">Total Time: <?php echo $total_time ?></h3>
   </div>
   <div class="col-text">
-    <h4 style="font-family:'Raleway';color:white">Time Left: <?php echo ($total_time - $time_consumed) ?> </h4>
+    <h3 style="font-family:'Raleway';color:white;font-weight:bold">Time Left: <?php echo ($total_time - $time_consumed) ?> </h3>
   </div>
   <div class="col-text mobile-hide">
-    <h4 style="font-family:'Raleway';color:white">Time in Auction: <?php echo $time_in_auction ?></h4>
+    <h3 style="font-family:'Raleway';color:white;font-weight:bold">Time in Auction: <?php echo $time_in_auction ?></h3>
   </div>
   <div class="col-text mobile-hide">
-    <h4 style="font-family:'Raleway';color:white">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h4>
+    <h3 style="font-family:'Raleway';color:white;font-weight:bold">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h3>
   </div>
   <div class="col-empty mobile-hide">
   </div>
