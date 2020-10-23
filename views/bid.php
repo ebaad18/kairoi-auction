@@ -121,7 +121,7 @@ function button1($nickname,$description,$email) //posting a bid
     "votes" => 0,   
     "bidded_on" => date('Y-m-d H:i:s'),
 )); 
-echo "<script> location.href='thank-you'; </script>";
+echo "<script> location.href='thank-you'; </script>"; //redirecting to thank you page
 exit();
 }     
 ?>
