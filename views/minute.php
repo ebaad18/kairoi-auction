@@ -120,7 +120,8 @@ function get_slot_sno(){
 }    
 ?>  
 
-<span style="font-size:40px;cursor:pointer;position:absolute;right:0;margin-right:2%" onclick="openNav()">&#9776;</span> 
+<span style="font-size:40px;cursor:pointer;position:absolute;right:0;margin-right:2%" onclick="openNav()">&#9776;</span>
+<div class="mobile-center" style="position:relative; max-height:80%; max-width:100%;text-align:center" > 
 <div style="position:relative; max-height:80%; max-width:100%; text-align:center; margin-top: 10%;" >
 
     
@@ -151,7 +152,7 @@ function get_slot_sno(){
     color:white;
     font-family:Raleway;">Vote bid</a></h3>
 </div>
-
+</div>
 <div class="footer-div">
   <div class="col-img" style="width:12%;background:#44474c;float:left;padding:10px;width:100px;">
   <img src="http://localhost/kairoi/wp-content/uploads/2020/10/fmi.jpg">

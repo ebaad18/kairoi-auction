@@ -5,7 +5,7 @@ get_header(); //import header
 
   
 ?>
-<div style="position:relative; max-height:80%; max-width:100%; text-align:center; margin-top: 10%;" >
+<div class="mobile-center" style="position:relative; max-height:80%; max-width:100%; text-align:center; margin-top: 10%;" >
     
     <h2 class="thank-you-heading"  style="position:absolute;
     z-index:3; 

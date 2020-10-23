@@ -33,6 +33,7 @@ function on_activate()
                         sno INT NOT NULL AUTO_INCREMENT,
                         total_time INT NOT NULL,
                         time_consumed INT NOT NULL,
+						time_in_auction INT NOT NULL,
                         PRIMARY KEY  (sno)
         )$charset_collate;";
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php'); //to call dbDelta

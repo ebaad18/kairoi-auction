@@ -43,8 +43,9 @@ function kairoi_auction_main(){
     
 ?>
     <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
-    <div style="position:relative; max-height:80%; max-width:100%; text-align:center" >
-    <span style="font-size:40px;cursor:pointer;position:absolute;right:0;margin-right:2%" onclick="openNav()">&#9776;</span> 
+    <div class="nav-bar-icon" onclick="openNav()">&#9776;</div>
+    <div id="mobile-center" style="position:relative; max-height:80%; max-width:100%;text-align:center" >
+    
     
     <image id="bg-img" src="wp-content/plugins/kairoiauction/assets/main-page-bg-1.png" >
 
@@ -120,8 +121,7 @@ function kairoi_auction_main(){
         <a href="#" style="pointer-events:none"><h5>&#8826; social &#8827;</h5></a>
         <a href="https://www.instagram.com/kairoi.thetimes/" style="display:inline" target="_blank"><i class="fa fa-instagram" style="font-size:35px;color:#818181;"></i></a>
         <a href="https://www.facebook.com/kairoi.thetimes/" style="display:inline" target="_blank"><i class="fa fa-facebook-square" style="font-size:35px;color:#818181;"></i></a>
-        <i onclick="copy_url()" class="fa fa-share-alt" style="font-size:35px;color:#818181;padding-left:20px;cursor:pointer"></i>
-        
+        <i onclick="copy_url()" class="fa fa-share-alt" style="font-size:35px;color:#818181;padding-left:20px;cursor:pointer"></i>      
     </div>
 
 
@@ -132,6 +132,8 @@ function kairoi_auction_main(){
         function add_styles(){
             var element = document.getElementById("main-heading");
             element.classList.add("no-border");
+            var element = document.getElementById("mobile-center");
+            element.classList.add("mobile-center");
             document.getElementById("bg-img").src = "wp-content/plugins/kairoiauction/assets/main-page-bg-2-full.png";
             for(let w = 0; w <7 ; w++){
                 var obj = document.getElementsByClassName("time-slot")[w];
@@ -143,7 +145,7 @@ function kairoi_auction_main(){
             }      
         }
         function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("mySidenav").style.width = "300px";
             }
 
             function closeNav() {

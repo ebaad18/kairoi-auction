@@ -26,6 +26,7 @@ $parts = parse_url($link);
 $broken_parts= @explode('-', $parts[path]); //@ is used to suppress warnings
 $slot_sno_from_url = end($broken_parts);
 $slot_sno_from_url = rtrim($slot_sno_from_url,'/bid');
+
 $minute_from_url = $broken_parts[1];
 $minute_from_url = rtrim($minute_from_url,'/slot');
 
@@ -33,9 +34,10 @@ $minute_from_url = rtrim($minute_from_url,'/slot');
 if(array_key_exists('create_new_bid', $_POST)) { 
     button1($_POST["nickname"],$_POST["description"],$_POST["email"]); 
 } 
-function button1($nickname,$description,$email) //posting a bid
+function button1($nickname,$description,$email){ //posting a bid
     global $wpdb;
-    GLOBAL $slot_sno_from_url;
+    global $slot_sno_from_url;
+    global $minute_from_url;
     
     //saving info of user who bidded
 
@@ -76,9 +78,11 @@ function button1($nickname,$description,$email) //posting a bid
         foreach($details as $key=>$val)
             {			
                 $time_consumed = $val->time_consumed;
+                $time_in_auction = $val->time_in_auction;
             }
-    
-        $wpdb->update('wp_kairoi_auction_master', array('time_consumed'=>($time_consumed +5)), array('sno'=>1)); //if a slot is full, then deduct from total time
+        $temp = (int)$minute_from_url;    
+        $wpdb->update('wp_kairoi_auction_master', array('time_consumed'=>($time_consumed + $temp)), array('sno'=>1)); //if a slot is full, then deduct from total time
+        $wpdb->update('wp_kairoi_auction_master', array('time_in_auction'=>($time_in_auction + $temp)), array('sno'=>1)); //if a slot is full, then add to time in auction
         $wpdb->update('wp_kairoi_slots', array('is_slot_open_for_voting'=> true), array('slot_sno'=>$slot_sno_from_url)); //once a slot is full, it is open for voting
     }
 
