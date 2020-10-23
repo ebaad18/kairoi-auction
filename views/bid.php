@@ -132,14 +132,16 @@ exit();
     <form method="post"> 
     
 
-    <input type="text" name="nickname" placeholder="Enter Temporal Name" style="position:absolute; 
+    <input type="text" name="nickname" placeholder="Enter Temporal Name" style="font-family:'Raleway';
+    position:absolute; 
     top: 40%;
     left:50%;
     width: 55%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"/>
 
-    <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email" style="position:absolute; 
+    <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email" style="font-family:'Raleway';
+    position:absolute; 
     top: 50%;
     left:50%;
     width: 55%;
@@ -147,7 +149,8 @@ exit();
     -ms-transform: translate(-50%, -50%);"/>
 
     <textarea maxlength="50" name="description" rows="3" placeholder="How will you occupy this time?"
-    style="position:absolute; 
+    style="font-family:'Raleway';
+    position:absolute; 
     top: 65%;
     left:50%;
     width: 55%;
