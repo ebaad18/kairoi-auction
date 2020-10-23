@@ -24,8 +24,9 @@ function on_activate()
 {
     global $wpdb;
     $charset_collate = $wpdb->get_charset_collate();
-    $table_name = $wpdb->prefix . 'kairoi_auction_master';
-	// if(count($wpdb->get_var('SHOW TABLES LIKE ')) == 0){
+	$table_name = $wpdb->prefix . 'kairoi_auction_master';
+	
+	//checking and making table that stores the total time and the time consumed in the auction
 
 	if (count($wpdb->get_results("SHOW TABLES LIKE '$table_name'"))==0){
 		$table = "CREATE TABLE $table_name (
@@ -36,8 +37,11 @@ function on_activate()
         )$charset_collate;";
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php'); //to call dbDelta
         dbDelta($table); //dbDelta function is located at upgrade.php
-    }
-        if (count($wpdb->get_results("SHOW TABLES LIKE 'wp_kairoi_bidding_users'"))==0){
+	}
+	
+	//checking and making table for storing information about all users who bid
+
+    if (count($wpdb->get_results("SHOW TABLES LIKE 'wp_kairoi_bidding_users'"))==0){
         $table = "CREATE TABLE wp_kairoi_bidding_users (
                         user_sno INT NOT NULL AUTO_INCREMENT,
                         email VARCHAR(30),
@@ -48,7 +52,10 @@ function on_activate()
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php'); //to call dbDelta
 		dbDelta($table); //dbDelta function is located at upgrade.php
 	}
-		if (count($wpdb->get_results("SHOW TABLES LIKE 'wp_kairoi_slot_time'"))==0){
+	
+	//checking and making table to store the seven slot times
+
+	if (count($wpdb->get_results("SHOW TABLES LIKE 'wp_kairoi_slot_time'"))==0){
 		$table = "CREATE TABLE wp_kairoi_slot_time (
 						slot_time_sno INT NOT NULL AUTO_INCREMENT,
 						time INT NOT NULL,
@@ -58,7 +65,10 @@ function on_activate()
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php'); //to call dbDelta
 		dbDelta($table); //dbDelta function is located at upgrade.php
 	}
-		if (count($wpdb->get_results("SHOW TABLES LIKE 'wp_kairoi_slots'"))==0){
+
+	//checking and then making table for storing all the slots 
+
+	if (count($wpdb->get_results("SHOW TABLES LIKE 'wp_kairoi_slots'"))==0){
 		$table = "CREATE TABLE wp_kairoi_slots (
 						slot_sno INT NOT NULL AUTO_INCREMENT,
 						slot_time_sno INT NOT NULL,
@@ -70,7 +80,10 @@ function on_activate()
 		) $charset_collate;";
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php'); //to call dbDelta
 		dbDelta($table); //dbDelta function is located at upgrade.php
-    }
+	}
+	
+	// checking and then making table for storing all bids
+
     if (count($wpdb->get_results("SHOW TABLES LIKE 'wp_kairoi_bids'"))==0){
 		$table = "CREATE TABLE wp_kairoi_bids (
 						bid_sno INT NOT NULL AUTO_INCREMENT,
