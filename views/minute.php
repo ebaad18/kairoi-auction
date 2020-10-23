@@ -23,15 +23,15 @@ $parts = parse_url($link);
 
 //for offset parameters
 $broken_parts= @explode('-', $parts[path]); //@ is used to suppress warnings
-$time_from_url = end($broken_parts);
+$time_from_url = end($broken_parts); //fetches time of slot from URL
 $time_from_url = rtrim($time_from_url,'/');
 
 
 ?>
 
 <?php
-global $time_from_url;
-$table_name = 'wp_kairoi_slot_time';
+global $time_from_url; //making it global for usage in all of the code
+$table_name = 'wp_kairoi_slot_time'; 
 global $wpdb;
 global $no_of_bids;
 $details = $wpdb->get_results (
@@ -53,17 +53,6 @@ global $wpdb;
 global $count;
 get_slot_sno();
 
-// else{
-//     echo "<div id='snackbar'>Please log in</div>
-    
-//     <script>
-    
-//       var x = document.getElementById('snackbar');
-//       x.className = 'show';
-//       setTimeout(function(){ x.className = x.className.replace('show', ''); }, 3000);
-//       window.location.assign('http://localhost/kairoi/wp-admin');
-//     </script>";
-// }
 function get_slot_sno(){
     global $slot_time_sno;
     global $wpdb;
@@ -72,7 +61,7 @@ function get_slot_sno(){
     global $slot_sno;
     global $no_of_bids;
     global $max_no;
-    $table_name = 'wp_kairoi_slots';
+    $table_name = 'wp_kairoi_slots'; //getting all slots of a particular time that was fetched from the URL
     $details = $wpdb->get_results (
             "
             SELECT *
@@ -84,11 +73,10 @@ function get_slot_sno(){
         {	
             $slot_sno = $val->slot_sno;	
             $no_of_bids = $val->no_of_bids;	
-            //echo '<a style="text-align:center" href="slot-'.$slot_sno.'/">Slot '.($key+1).'</a><br>';
             $count++;
             
         }  
-    if ($count == 0)
+    if ($count == 0) //if there are no slots, then make one
     {
         global $slot_time_sno;
         global $wpdb;
@@ -100,7 +88,9 @@ function get_slot_sno(){
         get_slot_sno(); 
     } 
     else{
+        //if there are slots, then check if the maximum number of slots allowed are not exceeded
         if($count <= $max_no){
+            //if the number of slots do not exceed the maximum number then check if the previous slot has 5 bids or not. If yes, make another slot
             if( $no_of_bids >=5){
                 global $slot_time_sno;
                 global $wpdb;
@@ -112,6 +102,7 @@ function get_slot_sno(){
                 get_slot_sno();
             }
         }
+        //if number of slots are equal to the max number allowed, then send a notification that mor slots cannot be made
         else{
             echo "<div id='snackbar'>All slots have been bidded on.</div>
     
@@ -129,10 +120,6 @@ function get_slot_sno(){
 }    
 ?>  
 
-<!-- <form method="post"> 
-    <input type="submit" name="create_new_time_slot"
-            class="button" value="Create New Slot"/> 
-</form> -->
 <span style="font-size:40px;cursor:pointer;position:absolute;right:0;margin-right:2%" onclick="openNav()">&#9776;</span> 
 <div style="position:relative; max-height:80%; max-width:100%; text-align:center; margin-top: 10%;" >
 
