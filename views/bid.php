@@ -44,7 +44,46 @@ foreach($details as $key=>$val)
         $time_consumed = $val->time_consumed;
         $time_in_auction = $val->time_in_auction;
     }
+//whether ip is from share internet
+if (!empty($_SERVER['HTTP_CLIENT_IP']))   
+{
+$ip_address = $_SERVER['HTTP_CLIENT_IP'];
+}
+//whether ip is from proxy
+elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))  
+{
+$ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
+}
+//whether ip is from remote address
+else
+{
+$ip_address = $_SERVER['REMOTE_ADDR'];
+}
 
+$table_name = 'wp_kairoi_bids'; //getting all bids from this slot
+$details = $wpdb->get_results (
+        "
+        SELECT *
+        FROM $table_name
+        WHERE slot_sno = $slot_sno_from_url
+        "
+    );  
+foreach($details as $key=>$val)
+    {			
+        $temp = $val->ip;
+        if($temp == $ip_address){
+            echo "<div id='snackbar'>You have already bidded in this slot</div>
+
+            <script>
+
+            var x = document.getElementById('snackbar');
+            x.className = 'show';
+            setTimeout(function(){ x.className = x.className.replace('show', ''); }, 3000);
+            setTimeout(function() { location.href='../../../'; }, 3000);
+            </script>";
+            exit();
+        }    
+    }
 //submit bid functionality
 if(array_key_exists('create_new_bid', $_POST)) { 
     button1($_POST["nickname"],$_POST["description"],$_POST["email"]); 
@@ -53,6 +92,8 @@ function button1($nickname,$description,$email){ //posting a bid
     global $wpdb;
     global $slot_sno_from_url;
     global $minute_from_url;
+    global $ip_address;
+    
     
     //saving info of user who bidded
 
@@ -65,7 +106,6 @@ function button1($nickname,$description,$email){ //posting a bid
      //adding the new bid to the slot
 
     $table_name = 'wp_kairoi_slots';
-    global $wpdb;
     $details = $wpdb->get_results (
             "
             SELECT *
@@ -83,7 +123,6 @@ function button1($nickname,$description,$email){ //posting a bid
     if(($no_of_bids+1) == 5) //if a slot gets full
     {
         $table_name = 'wp_kairoi_auction_master';
-        global $wpdb;
         $details = $wpdb->get_results (
                 "
                 SELECT *
@@ -102,7 +141,6 @@ function button1($nickname,$description,$email){ //posting a bid
     }
 
     $table_name = 'wp_kairoi_bidding_users';
-    global $wpdb;
     $details = $wpdb->get_results (
             "
             SELECT *
@@ -114,22 +152,6 @@ function button1($nickname,$description,$email){ //posting a bid
             $temp = $val->user_sno;
         }
     
-    //whether ip is from share internet
-    if (!empty($_SERVER['HTTP_CLIENT_IP']))   
-    {
-    $ip_address = $_SERVER['HTTP_CLIENT_IP'];
-    }
-    //whether ip is from proxy
-    elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))  
-    {
-    $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    }
-    //whether ip is from remote address
-    else
-    {
-    $ip_address = $_SERVER['REMOTE_ADDR'];
-    }
-
     //finally inserting the new bid into the database
 
     $wpdb->insert("wp_kairoi_bids", array(

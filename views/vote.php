@@ -28,6 +28,23 @@ $time_from_url = rtrim($time_from_url,'/vote/sl');
 $slot_sno_from_url = end($broken_parts);
 $slot_sno_from_url = rtrim($slot_sno_from_url,'/');
 
+//getting ip address of user or client
+//whether ip is from share internet
+if (!empty($_SERVER['HTTP_CLIENT_IP']))   
+{
+$ip_address = $_SERVER['HTTP_CLIENT_IP'];
+}
+//whether ip is from proxy
+elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))  
+{
+$ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
+}
+//whether ip is from remote address
+else
+{
+$ip_address = $_SERVER['REMOTE_ADDR'];
+}
+
 $table_name = 'wp_kairoi_auction_master'; //getting auction master for footer
 global $wpdb;
 $details = $wpdb->get_results (
@@ -53,32 +70,7 @@ foreach($details as $key=>$val)
     -ms-transform: translate(-50%, -50%);"> <?php echo $time_from_url; ?> minutes</h2>
 <?php
 
-if(array_key_exists('post_vote', $_POST)) { 
-    button1($_POST["radio-buttons-for-voting"]); 
-}
-
-function button1($description_from_form){
-    $table_name = 'wp_kairoi_bids';
-    global $wpdb;
-    $details = $wpdb->get_results (
-            "
-            SELECT *
-            FROM $table_name
-            WHERE description = '$description_from_form'
-            "
-        );  
-    foreach($details as $key=>$val)
-        {			
-            $votes = $val->votes;
-            $bid_sno = $val->bid_sno;
-        }
-    
-    $wpdb->update('wp_kairoi_bids', array('votes'=>($votes +1)), array('bid_sno'=>$bid_sno));    
-    echo "<script> location.href='thank-you'; </script>";
-}
-
 global $wpdb;
-
 $table_name = 'wp_kairoi_slots';
 $details = $wpdb->get_results (
         "
@@ -87,13 +79,29 @@ $details = $wpdb->get_results (
         WHERE slot_sno = $slot_sno_from_url
         "
     );
-
 foreach($details as $key=>$val)
 {			
     $is_slot_open_for_voting = $val->is_slot_open_for_voting;
     $no_of_bids = $val->no_of_bids;
+    $voted_ips = $val->voted_ips;
 }
+$ips_that_have_voted_here= @explode(',', $voted_ips); //@ is used to suppress warnings
+for($i = 1 ; $i < count($ips_that_have_voted_here) ; $i++)
+    {
+        if($ips_that_have_voted_here[$i]==$ip_address){
+            echo "<div id='snackbar'>You have already voted in this slot</div>
 
+            <script>
+
+            var x = document.getElementById('snackbar');
+            x.className = 'show';
+            setTimeout(function(){ x.className = x.className.replace('show', ''); }, 3000);
+            setTimeout(function() { location.href='../../../'; }, 3000);
+            </script>";
+            exit();
+        }
+    }
+//for showing already closed slots where winner is decided
 if($is_slot_open_for_voting==false&&$no_of_bids==5){
 
     $table_name = 'wp_kairoi_bids';
@@ -141,6 +149,34 @@ foreach($details as $key=>$val)
                 class='button vote-button' value='Vote'/> 
             </form></div>";
         }
+
+if(array_key_exists('post_vote', $_POST)) { 
+    button1($_POST["radio-buttons-for-voting"]); 
+}
+
+function button1($description_from_form){
+    $table_name = 'wp_kairoi_bids';
+    global $slot_sno_from_url;
+    global $voted_ips;
+    global $ip_address;
+    global $wpdb;
+    $details = $wpdb->get_results (
+            "
+            SELECT *
+            FROM $table_name
+            WHERE description = '$description_from_form'
+            "
+        );  
+    foreach($details as $key=>$val)
+        {			
+            $votes = $val->votes;
+            $bid_sno = $val->bid_sno;
+        }
+    $wpdb->update('wp_kairoi_slots', array('voted_ips'=>($voted_ips . "," . $ip_address)), array('slot_sno'=>$slot_sno_from_url));
+    $wpdb->update('wp_kairoi_bids', array('votes'=>($votes +1)), array('bid_sno'=>$bid_sno));    
+    echo "<script> location.href='thank-you'; </script>";
+}
+        
 ?>
 <div class="footer-div">
   <div class="col-img" style="width:12%;background:#44474c;float:left;padding:10px;width:100px;">

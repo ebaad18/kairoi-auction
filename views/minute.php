@@ -99,6 +99,7 @@ function get_slot_sno(){
         $wpdb->insert("wp_kairoi_slots", array(
         "slot_time_sno" => $slot_time_sno,
         "no_of_bids" => 0,
+        "voted_ips" => '',
         "created_on" => date('Y-m-d H:i:s'),
         ));
         get_slot_sno(); 
@@ -113,6 +114,7 @@ function get_slot_sno(){
                 $wpdb->insert("wp_kairoi_slots", array(
                 "slot_time_sno" => $slot_time_sno,
                 "no_of_bids" => 0,
+                "voted_ips" => '',
                 "created_on" => date('Y-m-d H:i:s'),
                 ));
                 get_slot_sno();
