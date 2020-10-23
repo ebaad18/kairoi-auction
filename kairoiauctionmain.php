@@ -148,7 +148,7 @@ function kairoi_auction_main(){
             document.getElementById("mySidenav").style.width = "300px";
             }
 
-            function closeNav() {
+        function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
             }
         function copy_url() {

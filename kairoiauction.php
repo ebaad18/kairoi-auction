@@ -150,7 +150,7 @@ function custom_rewrite_basic() {
 
 	add_rewrite_rule('^minute-(.)+/vote', 'wp-content/plugins/kairoiauction/views/vote-show-slots.php', 'top');
 
-    add_rewrite_rule('^minute-(.)+/slot-(.)+', 'wp-content/plugins/kairoiauction/views/slot.php', 'top');
+    //add_rewrite_rule('^minute-(.)+/slot-(.)+', 'wp-content/plugins/kairoiauction/views/slot.php', 'top');
     
 	add_rewrite_rule('^minute-(.)+', 'wp-content/plugins/kairoiauction/views/minute.php', 'top');
 	

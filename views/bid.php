@@ -144,7 +144,8 @@ echo "<script> location.href='thank-you'; </script>"; //redirecting to thank you
 exit();
 }     
 ?>
-<span style="font-size:40px;cursor:pointer;position:absolute;right:0;margin-right:2%" onclick="openNav()">&#9776;</span> 
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
+<div class="nav-bar-icon" onclick="openNav()">&#9776;</div>
 <h2 class="bid-heading"  style="position:absolute; 
     top: 20%;
     left:50%;
@@ -218,12 +219,17 @@ exit();
 </div>
 
 <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#"><h4>About</h4></a>
-        <a href="#"><h4>Instructions</h4></a>
-        <a href="#"><h4>Rules</h4></a>
-        <a href="#"><h4>Winners</h4></a>
-        <a href="#"><h4>Contact</h4></a>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/about"><h5>About</h5></a>
+    <a href="/instructions"><h5>Instructions</h5></a>
+    <a href="/rules"><h5>Rules</h5></a>
+    <a href="/winners"><h5>Winners</h5></a>
+    <a href="/contact"><h5>Contact</h5></a>
+    <hr style="width:40%;">
+    <a href="#" style="pointer-events:none"><h5>&#8826; social &#8827;</h5></a>
+    <a href="https://www.instagram.com/kairoi.thetimes/" style="display:inline" target="_blank"><i class="fa fa-instagram" style="font-size:35px;color:#818181;"></i></a>
+    <a href="https://www.facebook.com/kairoi.thetimes/" style="display:inline" target="_blank"><i class="fa fa-facebook-square" style="font-size:35px;color:#818181;"></i></a>
+    <i onclick="copy_url()" class="fa fa-share-alt" style="font-size:35px;color:#818181;padding-left:20px;cursor:pointer"></i>      
 </div>
 <script>
     function openNav() {
@@ -232,5 +238,14 @@ exit();
 
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
+    }
+    function copy_url() {
+        const el = document.createElement('textarea');
+        el.value = "https://kairoi.in";
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        alert("Link copied to clipboard");
     }
 </script>
