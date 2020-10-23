@@ -28,7 +28,7 @@ $time_from_url = rtrim($time_from_url,'/vote/sl');
 $slot_sno_from_url = end($broken_parts);
 $slot_sno_from_url = rtrim($slot_sno_from_url,'/');
 ?>
-<div style="position:relative; max-height:80%; max-width:100%; text-align:center; margin-top: 10%;" >
+<div style="position:relative; max-height:80%; max-width:100%; text-align:left; margin-top: 10%;" >
     <h2 class="vote-heading"  style="position:absolute; 
     top: -5%;
     left:50%;
@@ -93,9 +93,9 @@ if($is_slot_open_for_voting==false&&$no_of_bids==5){
     {			
         $description = $val->description;
         $votes = $val->votes;
-        echo "<div style='margin:auto;text-align:left'><h3 style='font-family:'Raleway';'> ".$description."<span style='background:#00687f;font-size:50%;padding:5px;color:white;margin-left:40px;'>".$votes." votes</span></h3></div>";
+        echo "<h3 style='margin-left:30%;font-family:Raleway'> ".$description."<span style='background:#00687f;font-size:50%;padding:5px;color:white;margin-left:40px;'>".$votes." votes</span></h3>";
     }
-    echo "<h5 style='font-family:'Raleway';'>Slot is closed for voting</h5>";
+    echo "<h5 style='margin-left:30%;font-family:Raleway'>Slot is closed for voting</h5>";
 
 }
 
@@ -115,12 +115,12 @@ $details = $wpdb->get_results (
 foreach($details as $key=>$val)
     {			
         $description = $val->description;
-        echo "<input checked type='radio' name='radio-buttons-for-voting' id='vote-".$key."' value='".$description."'>
-                            <label style='font-family:Raleway;font-size:28px;font-weight:bold' for='".$key."'> ".$description."</label><br><br>";
+        echo "<input style='margin-left:30%;' checked type='radio' name='radio-buttons-for-voting' id='vote-".$key."' value='".$description."'>
+                            <label class='voting-labels' for='".$key."'> ".$description."</label><br>";
     }
     echo "
-                <input type='submit' name='post_vote'
-                class='button' value='Submit Your Vote' style='font-family:Raleway;border-radius: 0px; background:#00687f; padding:5px; color:white;'/> 
+                <br><input type='submit' name='post_vote'
+                class='button vote-button' value='Vote'/> 
             </form></div>";
         }
 ?>
