@@ -136,16 +136,17 @@ function get_slot_sno(){
 <span style="font-size:40px;cursor:pointer;position:absolute;right:0;margin-right:2%" onclick="openNav()">&#9776;</span> 
 <div style="position:relative; max-height:80%; max-width:100%; text-align:center; margin-top: 10%;" >
 
-    <image src="../wp-content/plugins/kairoiauction/assets/minute-page-bg.png" >
-    <h2 class="main-heading-center"  style="position:absolute; 
-    top: -5%;
+    
+    <h2 class="minute-heading"  style="z-index:3;
+    position:absolute; 
+    top: 0%;
     left:50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> <?php echo $time_from_url; ?> minutes</h2> 
-    
-    <h3><a href="slot-<?php echo $slot_sno?>/bid/" style="position:absolute; 
-    top: 81%;
-    left:40%;
+    <image class="minute-page-bg" src="../wp-content/plugins/kairoiauction/assets/minute-page-bg.png" >
+    <h3><a class="minute-page-bid-link" href="slot-<?php echo $slot_sno?>/bid/" style="position:absolute; 
+    top: 85%;
+    left:28%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background:#00687f;
@@ -153,15 +154,15 @@ function get_slot_sno(){
     color:white;
     font-family:Raleway;">Start bidding</a></h3>
     
-    <h3><a href="vote/" style="position:absolute; 
-    top: 81%;
-    left:60%;
+    <h3><a class="minute-page-vote-link" href="vote/" style="position:absolute; 
+    top: 85%;
+    left:72%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background:#00687f;
     padding:5px;
     color:white;
-    font-family:Raleway;">Vote for best bid</a></h3>
+    font-family:Raleway;">Vote bid</a></h3>
 </div>
 <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>

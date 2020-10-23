@@ -64,6 +64,7 @@ function on_activate()
 						slot_time_sno INT NOT NULL,
 						created_on DATETIME NOT NULL,
 						no_of_bids INT NOT NULL,
+						is_slot_open_for_voting BOOLEAN DEFAULT 0,
 						PRIMARY KEY  (slot_sno),
                         FOREIGN KEY (slot_time_sno) REFERENCES wp_kairoi_slot_time(slot_time_sno)
 		) $charset_collate;";
@@ -78,6 +79,7 @@ function on_activate()
 						description VARCHAR(250) NOT NULL,
 						ip VARCHAR(20) NOT NULL,
 						votes INT NOT NULL,
+						is_winner BOOLEAN DEFAULT 0,
 						bidded_on DATETIME NOT NULL,
 						PRIMARY KEY  (bid_sno),
                         FOREIGN KEY (slot_sno) REFERENCES wp_kairoi_slots(slot_sno),

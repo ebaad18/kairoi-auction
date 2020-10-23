@@ -39,7 +39,7 @@ function kairoi_auction_main(){
     
     
 ?>
-    
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
     <div style="position:relative; max-height:80%; max-width:100%; text-align:center" >
     <span style="font-size:40px;cursor:pointer;position:absolute;right:0;margin-right:2%" onclick="openNav()">&#9776;</span> 
     
@@ -54,63 +54,69 @@ function kairoi_auction_main(){
         left:".rand(0,90)."%;  top:".rand(0,85)."%; opacity:0.".rand(0,100)."'>".$array_for_display[(rand(0,$count-1))]."<br>";
     }}?>
     
-    <h1 class="main-heading-center" onclick="add_styles()" style="position:absolute; 
-    top: 50%;
-    left:49%;
+    <h2 id="main-heading" class="main-heading-center" onclick="add_styles()" style="position:absolute; 
+    top: 46%;
+    left:50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"><?php echo ($total_time - $time_consumed) ?></h1>
+    -ms-transform: translate(-50%, -50%);"><?php echo ($total_time - $time_consumed) ?></h2>
 
-    <h4 class="time-slots-main-page-heading" style="position:absolute; 
-    top: 2%;
+    <h4 class="time-slots-main-page-heading slot-5" style="position:absolute; 
+    top: 13%;
     left:52%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-5/">5 minutes</a> </h4>
 
-    <h4 class="time-slots-main-page-heading" style="position:absolute; 
-    top: 20%;
-    left:71%;
+    <h4 class="time-slots-main-page-heading slot-720" style="position:absolute; 
+    top: 29%;
+    left:69%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-15/">15 minutes</a> </h4>
+    -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-720/">12 hours</a> </h4>
     
-    <h4 class="time-slots-main-page-heading" style="position:absolute; 
-    top: 50%;
-    left:73%;
+    <h4 class="time-slots-main-page-heading slot-30" style="position:absolute; 
+    top: 46%;
+    left:77%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-30/">30 minutes</a> </h4>
 
-    <h4 class="time-slots-main-page-heading" style="position:absolute; 
-    top: 85%;
-    left:72%;
+    <h4 class="time-slots-main-page-heading slot-1440" style="position:absolute; 
+    top: 71%;
+    left:71%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-60/">1 hour</a> </h4>
+    -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-1440/">1 day</a> </h4>
 
-    <h4 class="time-slots-main-page-heading" style="position:absolute; 
-    top: 89%;
-    left:42%;
+    <h4 class="time-slots-main-page-heading slot-360" style="position:absolute; 
+    top: 83%;
+    left:43%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-360/">6 hours</a> </h4>
 
-    <h4 class="time-slots-main-page-heading" style="position:absolute; 
+    <h4 class="time-slots-main-page-heading slot-15" style="position:absolute; 
     top: 58%;
-    left:26%;
+    left:20%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-720/">12 hours</a> </h4>
+    -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-15/">15 minutes</a> </h4>
 
-    <h4 class="time-slots-main-page-heading" style="position:absolute; 
-    top: 26%;
-    left:30%;
+    <h4 class="time-slots-main-page-heading slot-60" style="position:absolute; 
+    top: 29%;
+    left:28%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-1440/">1 day</a> </h4>
+    -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-60/">1 hour</a> </h4>
 
     </div>
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#"><h4>About</h4></a>
-        <a href="#"><h4>Instructions</h4></a>
-        <a href="#"><h4>Rules</h4></a>
-        <a href="#"><h4>Winners</h4></a>
-        <a href="#"><h4>Contact</h4></a>
+        <a href="about"><h5>About</h5></a>
+        <a href="instructions"><h5>Instructions</h5></a>
+        <a href="rules"><h5>Rules</h5></a>
+        <a href="winners"><h5>Winners</h5></a>
+        <a href="contact"><h5>Contact</h5></a>
+        <hr style="width:40%;">
+        <a href="#" style="pointer-events:none"><h5>&#8826; social &#8827;</h5></a>
+        <a href="https://www.instagram.com/kairoi.thetimes/" style="display:inline" target="_blank"><i class="fa fa-instagram" style="font-size:35px;color:#818181;"></i></a>
+        <a href="https://www.facebook.com/kairoi.thetimes/" style="display:inline" target="_blank"><i class="fa fa-facebook-square" style="font-size:35px;color:#818181;"></i></a>
+        <i onclick="copy_url()" class="fa fa-share-alt" style="font-size:35px;color:#818181;padding-left:20px;cursor:pointer"></i>
+        
     </div>
 
 
@@ -119,8 +125,9 @@ function kairoi_auction_main(){
         // var temp = document.getElementsByClassName("site-content")[0];
         // temp.setAttribute("style", "background-image:url('wp-content/plugins/kairoiauction/assets/main-page-bg.png'); background-position: center;background-repeat: no-repeat;background-size: contain;");
         function add_styles(){
-            console.log("Clicked on");
-            document.getElementById("bg-img").src = "wp-content/plugins/kairoiauction/assets/main-page-bg-2.png";
+            var element = document.getElementById("main-heading");
+            element.classList.add("no-border");
+            document.getElementById("bg-img").src = "wp-content/plugins/kairoiauction/assets/main-page-bg-2-full.png";
             for(let w = 0; w <7 ; w++){
                 var obj = document.getElementsByClassName("time-slot")[w];
                 obj.setAttribute("style", "color:black !important;pointer-events:auto;");
@@ -136,6 +143,15 @@ function kairoi_auction_main(){
 
             function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
+            }
+        function copy_url() {
+            const el = document.createElement('textarea');
+            el.value = "https://kairoi.in";
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert("Link copied to clipboard");
             }
     </script>
 <?php

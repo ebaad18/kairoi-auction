@@ -78,6 +78,7 @@ function button1($nickname,$description,$email) //creating new time slots
             }
     
         $wpdb->update('wp_kairoi_auction_master', array('time_consumed'=>($time_consumed +5)), array('sno'=>1));
+        $wpdb->update('wp_kairoi_slots', array('is_slot_open_for_voting'=> true), array('slot_sno'=>$slot_sno_from_url));
     }
 
     $table_name = 'wp_kairoi_bidding_users';
@@ -115,7 +116,7 @@ function button1($nickname,$description,$email) //creating new time slots
     "user_sno" => $temp,
     "description" => $description,
     "ip" => $ip_address,
-    "votes" => 0,    
+    "votes" => 0,   
     "bidded_on" => date('Y-m-d H:i:s'),
 )); 
 echo "<script> location.href='thank-you'; </script>";
@@ -145,7 +146,7 @@ exit();
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"/>
 
-    <textarea maxlength="50" name="description" rows="3" placeholder="Enter Description"
+    <textarea maxlength="50" name="description" rows="3" placeholder="How will you occupy this time?"
     style="position:absolute; 
     top: 65%;
     left:50%;
