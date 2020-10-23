@@ -31,21 +31,22 @@ $minute_from_url = rtrim($minute_from_url,'/slot');
 
 
 if(array_key_exists('create_new_bid', $_POST)) { 
-    //echo $_POST["nickname"];
     button1($_POST["nickname"],$_POST["description"],$_POST["email"]); 
 } 
-function button1($nickname,$description,$email) //creating new time slots
-{
+function button1($nickname,$description,$email) //posting a bid
     global $wpdb;
     GLOBAL $slot_sno_from_url;
-    //$current_user_id = get_current_user_id();
     
+    //saving info of user who bidded
+
     $wpdb->insert("wp_kairoi_bidding_users", array(
         "nickname" => $nickname,
         "email" => $email,
-        "voted_bids" => 'vrr',
+        "voted_bids" => 'na',
      )); 
     
+     //adding the new bid to the slot
+
     $table_name = 'wp_kairoi_slots';
     global $wpdb;
     $details = $wpdb->get_results (
@@ -60,9 +61,9 @@ function button1($nickname,$description,$email) //creating new time slots
             $no_of_bids = $val->no_of_bids;
         }
     
-    $wpdb->update('wp_kairoi_slots', array('no_of_bids'=>($no_of_bids +1)), array('slot_sno'=>$slot_sno_from_url));
+    $wpdb->update('wp_kairoi_slots', array('no_of_bids'=>($no_of_bids +1)), array('slot_sno'=>$slot_sno_from_url)); //incrementing the number of bids in a slot
     
-    if(($no_of_bids+1) == 5)
+    if(($no_of_bids+1) == 5) //if a slot gets full
     {
         $table_name = 'wp_kairoi_auction_master';
         global $wpdb;
@@ -77,8 +78,8 @@ function button1($nickname,$description,$email) //creating new time slots
                 $time_consumed = $val->time_consumed;
             }
     
-        $wpdb->update('wp_kairoi_auction_master', array('time_consumed'=>($time_consumed +5)), array('sno'=>1));
-        $wpdb->update('wp_kairoi_slots', array('is_slot_open_for_voting'=> true), array('slot_sno'=>$slot_sno_from_url));
+        $wpdb->update('wp_kairoi_auction_master', array('time_consumed'=>($time_consumed +5)), array('sno'=>1)); //if a slot is full, then deduct from total time
+        $wpdb->update('wp_kairoi_slots', array('is_slot_open_for_voting'=> true), array('slot_sno'=>$slot_sno_from_url)); //once a slot is full, it is open for voting
     }
 
     $table_name = 'wp_kairoi_bidding_users';
@@ -109,7 +110,8 @@ function button1($nickname,$description,$email) //creating new time slots
     {
     $ip_address = $_SERVER['REMOTE_ADDR'];
     }
-    echo $ip_address;
+
+    //finally inserting the new bid into the database
 
     $wpdb->insert("wp_kairoi_bids", array(
     "slot_sno" => $slot_sno_from_url,
