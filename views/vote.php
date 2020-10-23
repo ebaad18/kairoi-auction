@@ -85,10 +85,12 @@ foreach($details as $key=>$val)
     $no_of_bids = $val->no_of_bids;
     $voted_ips = $val->voted_ips;
 }
+//getting alls voted ip addresses separately
 $ips_that_have_voted_here= @explode(',', $voted_ips); //@ is used to suppress warnings
 for($i = 1 ; $i < count($ips_that_have_voted_here) ; $i++)
     {
-        if($ips_that_have_voted_here[$i]==$ip_address){
+        if($ips_that_have_voted_here[$i]==$ip_address) //if ip address of curretn client matches with an already voted ip then they can't vote
+        {
             echo "<div id='snackbar'>You have already voted in this slot</div>
 
             <script>
