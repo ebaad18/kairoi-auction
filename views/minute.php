@@ -51,6 +51,21 @@ foreach($details as $key=>$val)
 
 global $wpdb;
 global $count;
+$table_name = 'wp_kairoi_auction_master'; //getting auction master for footer
+global $wpdb;
+$details = $wpdb->get_results (
+        "
+        SELECT *
+        FROM $table_name
+        "
+    );  
+foreach($details as $key=>$val)
+    {			
+        $total_time = $val->total_time;
+        $time_consumed = $val->time_consumed;
+        $time_in_auction = $val->time_in_auction;
+    }
+
 get_slot_sno();
 
 function get_slot_sno(){
@@ -61,6 +76,7 @@ function get_slot_sno(){
     global $slot_sno;
     global $no_of_bids;
     global $max_no;
+
     $table_name = 'wp_kairoi_slots'; //getting all slots of a particular time that was fetched from the URL
     $details = $wpdb->get_results (
             "
@@ -160,16 +176,16 @@ function get_slot_sno(){
   <div class="col-empty">
   </div>
   <div class="col-text">
-    <h4 style="font-family:'Raleway';color:white">Total Time: 35200</h4>
+    <h4 style="font-family:'Raleway';color:white">Total Time: <?php echo $total_time ?></h4>
   </div>
   <div class="col-text">
-    <h4 style="font-family:'Raleway';color:white">Time Left: 35100</h4>
+    <h4 style="font-family:'Raleway';color:white">Time Left: <?php echo ($total_time - $time_consumed) ?> </h4>
   </div>
   <div class="col-text mobile-hide">
-    <h4 style="font-family:'Raleway';color:white">Time in Auction: 30</h4>
+    <h4 style="font-family:'Raleway';color:white">Time in Auction: <?php echo $time_in_auction ?></h4>
   </div>
   <div class="col-text mobile-hide">
-    <h4 style="font-family:'Raleway';color:white">Time Auctioned: 70</h4>
+    <h4 style="font-family:'Raleway';color:white">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h4>
   </div>
   <div class="col-empty mobile-hide">
   </div>

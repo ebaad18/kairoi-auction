@@ -27,7 +27,23 @@ $time_from_url = $broken_parts[1];
 $time_from_url = rtrim($time_from_url,'/vote/sl');
 $slot_sno_from_url = end($broken_parts);
 $slot_sno_from_url = rtrim($slot_sno_from_url,'/');
+
+$table_name = 'wp_kairoi_auction_master'; //getting auction master for footer
+global $wpdb;
+$details = $wpdb->get_results (
+        "
+        SELECT *
+        FROM $table_name
+        "
+    );  
+foreach($details as $key=>$val)
+    {			
+        $total_time = $val->total_time;
+        $time_consumed = $val->time_consumed;
+        $time_in_auction = $val->time_in_auction;
+    }
 ?>
+
 <div style="position:relative; max-height:80%; max-width:100%; text-align:left; margin-top: 10%;" >
     <h2 class="vote-heading"  style="position:absolute; 
     top: -5%;
@@ -37,7 +53,6 @@ $slot_sno_from_url = rtrim($slot_sno_from_url,'/');
 <?php
 
 if(array_key_exists('post_vote', $_POST)) { 
-    // echo $_POST["radio-buttons-for-voting"];
     button1($_POST["radio-buttons-for-voting"]); 
 }
 
@@ -133,16 +148,16 @@ foreach($details as $key=>$val)
   <div class="col-empty">
   </div>
   <div class="col-text">
-    <h4 style="font-family:'Raleway';color:white">Total Time: 35200</h4>
+    <h4 style="font-family:'Raleway';color:white">Total Time: <?php echo $total_time ?></h4>
   </div>
   <div class="col-text">
-    <h4 style="font-family:'Raleway';color:white">Time Left: 35100</h4>
+    <h4 style="font-family:'Raleway';color:white">Time Left: <?php echo ($total_time - $time_consumed) ?> </h4>
   </div>
   <div class="col-text mobile-hide">
-    <h4 style="font-family:'Raleway';color:white">Time in Auction: 30</h4>
+    <h4 style="font-family:'Raleway';color:white">Time in Auction: <?php echo $time_in_auction ?></h4>
   </div>
   <div class="col-text mobile-hide">
-    <h4 style="font-family:'Raleway';color:white">Time Auctioned: 70</h4>
+    <h4 style="font-family:'Raleway';color:white">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h4>
   </div>
   <div class="col-empty mobile-hide">
   </div>

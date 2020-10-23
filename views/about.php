@@ -1,6 +1,22 @@
 <?php 
 require_once("../../../../wp-load.php");
-get_header(); //import header      
+get_header(); //import header
+
+$table_name = 'wp_kairoi_auction_master'; //getting auction master for footer
+global $wpdb;
+$details = $wpdb->get_results (
+        "
+        SELECT *
+        FROM $table_name
+        "
+    );  
+foreach($details as $key=>$val)
+    {			
+        $total_time = $val->total_time;
+        $time_consumed = $val->time_consumed;
+        $time_in_auction = $val->time_in_auction;
+    }
+
 ?>
 <head>
 <!-- Latest compiled and minified CSS -->
@@ -55,4 +71,28 @@ hr{
         </div>
         <div class="col-sm-2"></div>
     </div>
+</div>
+<div class="footer-div">
+  <div class="col-img" style="width:12%;background:#44474c;float:left;padding:10px;width:100px;">
+  <img src="http://localhost/kairoi/wp-content/uploads/2020/10/fmi.jpg">
+  </div>
+  <div class="col-empty">
+  </div>
+  <div class="col-text">
+    <h4 style="font-family:'Raleway';color:white">Total Time: <?php echo $total_time ?></h4>
+  </div>
+  <div class="col-text">
+    <h4 style="font-family:'Raleway';color:white">Time Left: <?php echo ($total_time - $time_consumed) ?> </h4>
+  </div>
+  <div class="col-text mobile-hide">
+    <h4 style="font-family:'Raleway';color:white">Time in Auction: <?php echo $time_in_auction ?></h4>
+  </div>
+  <div class="col-text mobile-hide">
+    <h4 style="font-family:'Raleway';color:white">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h4>
+  </div>
+  <div class="col-empty mobile-hide">
+  </div>
+  <div class="col-img" style="width:150px;margin-top:10px;">
+    <img src="http://localhost/kairoi/wp-content/uploads/2020/10/GI-MMB-horizontal-white-s-RGB-web.png">
+  </div>
 </div>
