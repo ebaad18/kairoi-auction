@@ -124,7 +124,7 @@ exit();
 }     
 ?>
 <span style="font-size:40px;cursor:pointer;position:absolute;right:0;margin-right:2%" onclick="openNav()">&#9776;</span> 
-<h2 class="main-heading-center"  style="position:absolute; 
+<h2 class="bid-heading"  style="position:absolute; 
     top: 20%;
     left:50%;
     transform: translate(-50%, -50%);
@@ -167,6 +167,32 @@ exit();
     color:white;
     font-family:Raleway;"/> 
 </form>
+
+<div class="footer-div">
+  <div class="col-img" style="width:12%;background:#44474c;float:left;padding:10px;width:100px;">
+  <img src="http://localhost/kairoi/wp-content/uploads/2020/10/fmi.jpg">
+  </div>
+  <div class="col-empty">
+  </div>
+  <div class="col-text">
+    <h4 style="font-family:'Raleway';color:white">Total Time: 35200</h4>
+  </div>
+  <div class="col-text">
+    <h4 style="font-family:'Raleway';color:white">Time Left: 35100</h4>
+  </div>
+  <div class="col-text mobile-hide">
+    <h4 style="font-family:'Raleway';color:white">Time in Auction: 30</h4>
+  </div>
+  <div class="col-text mobile-hide">
+    <h4 style="font-family:'Raleway';color:white">Time Auctioned: 70</h4>
+  </div>
+  <div class="col-empty mobile-hide">
+  </div>
+  <div class="col-img" style="width:150px;margin-top:10px;">
+    <img src="http://localhost/kairoi/wp-content/uploads/2020/10/GI-MMB-horizontal-white-s-RGB-web.png">
+  </div>
+</div>
+
 <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#"><h4>About</h4></a>

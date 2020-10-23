@@ -140,7 +140,7 @@ function get_slot_sno(){
     <h2 class="minute-heading"  style="z-index:3;
     position:absolute; 
     top: 0%;
-    left:50%;
+    left:51%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> <?php echo $time_from_url; ?> minutes</h2> 
     <image class="minute-page-bg" src="../wp-content/plugins/kairoiauction/assets/minute-page-bg.png" >
@@ -164,6 +164,32 @@ function get_slot_sno(){
     color:white;
     font-family:Raleway;">Vote bid</a></h3>
 </div>
+
+<div class="footer-div">
+  <div class="col-img" style="width:12%;background:#44474c;float:left;padding:10px;width:100px;">
+  <img src="http://localhost/kairoi/wp-content/uploads/2020/10/fmi.jpg">
+  </div>
+  <div class="col-empty">
+  </div>
+  <div class="col-text">
+    <h4 style="font-family:'Raleway';color:white">Total Time: 35200</h4>
+  </div>
+  <div class="col-text">
+    <h4 style="font-family:'Raleway';color:white">Time Left: 35100</h4>
+  </div>
+  <div class="col-text mobile-hide">
+    <h4 style="font-family:'Raleway';color:white">Time in Auction: 30</h4>
+  </div>
+  <div class="col-text mobile-hide">
+    <h4 style="font-family:'Raleway';color:white">Time Auctioned: 70</h4>
+  </div>
+  <div class="col-empty mobile-hide">
+  </div>
+  <div class="col-img" style="width:150px;margin-top:10px;">
+    <img src="http://localhost/kairoi/wp-content/uploads/2020/10/GI-MMB-horizontal-white-s-RGB-web.png">
+  </div>
+</div>
+
 <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#"><h4>About</h4></a>

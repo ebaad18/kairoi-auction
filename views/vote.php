@@ -29,7 +29,7 @@ $slot_sno_from_url = end($broken_parts);
 $slot_sno_from_url = rtrim($slot_sno_from_url,'/');
 ?>
 <div style="position:relative; max-height:80%; max-width:100%; text-align:center; margin-top: 10%;" >
-    <h2 class="main-heading-center"  style="position:absolute; 
+    <h2 class="vote-heading"  style="position:absolute; 
     top: -5%;
     left:50%;
     transform: translate(-50%, -50%);
@@ -62,6 +62,47 @@ function button1($description_from_form){
 }
 
 global $wpdb;
+
+$table_name = 'wp_kairoi_slots';
+$details = $wpdb->get_results (
+        "
+        SELECT *
+        FROM $table_name
+        WHERE slot_sno = $slot_sno_from_url
+        "
+    );
+
+foreach($details as $key=>$val)
+{			
+    $is_slot_open_for_voting = $val->is_slot_open_for_voting;
+    $no_of_bids = $val->no_of_bids;
+}
+
+if($is_slot_open_for_voting==false&&$no_of_bids==5){
+
+    $table_name = 'wp_kairoi_bids';
+    $details = $wpdb->get_results (
+        "
+        SELECT *
+        FROM $table_name
+        WHERE slot_sno = $slot_sno_from_url
+        "
+    );
+    echo "<br>";
+    foreach($details as $key=>$val)
+    {			
+        $description = $val->description;
+        $votes = $val->votes;
+        echo "<div style='margin:auto;text-align:left'><h3 style='font-family:'Raleway';'> ".$description."<span style='background:#00687f;font-size:50%;padding:5px;color:white;margin-left:40px;'>".$votes." votes</span></h3></div>";
+    }
+    echo "<h5 style='font-family:'Raleway';'>Slot is closed for voting</h5>";
+
+}
+
+elseif($is_slot_open_for_voting==false&&$no_of_bids<5){
+    echo "Wait for all bids to come";
+}
+else{
 $table_name = 'wp_kairoi_bids';
 $details = $wpdb->get_results (
         "
@@ -80,10 +121,33 @@ foreach($details as $key=>$val)
     echo "
                 <input type='submit' name='post_vote'
                 class='button' value='Submit Your Vote' style='font-family:Raleway;border-radius: 0px; background:#00687f; padding:5px; color:white;'/> 
-            </form></div>"
+            </form></div>";
+        }
 ?>
-
-<h3 id="modal" style="color:red;">NVOJNVNVOINVIORNVIONVRIORNIVNI</h3>
+<div class="footer-div">
+  <div class="col-img" style="width:12%;background:#44474c;float:left;padding:10px;width:100px;">
+  <img src="http://localhost/kairoi/wp-content/uploads/2020/10/fmi.jpg">
+  </div>
+  <div class="col-empty">
+  </div>
+  <div class="col-text">
+    <h4 style="font-family:'Raleway';color:white">Total Time: 35200</h4>
+  </div>
+  <div class="col-text">
+    <h4 style="font-family:'Raleway';color:white">Time Left: 35100</h4>
+  </div>
+  <div class="col-text mobile-hide">
+    <h4 style="font-family:'Raleway';color:white">Time in Auction: 30</h4>
+  </div>
+  <div class="col-text mobile-hide">
+    <h4 style="font-family:'Raleway';color:white">Time Auctioned: 70</h4>
+  </div>
+  <div class="col-empty mobile-hide">
+  </div>
+  <div class="col-img" style="width:150px;margin-top:10px;">
+    <img src="http://localhost/kairoi/wp-content/uploads/2020/10/GI-MMB-horizontal-white-s-RGB-web.png">
+  </div>
+</div>
 
 
 
