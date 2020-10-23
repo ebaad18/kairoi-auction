@@ -93,6 +93,7 @@ if($is_slot_open_for_voting==false&&$no_of_bids==5){
     {			
         $description = $val->description;
         $votes = $val->votes;
+        //building display for winners display
         echo "<h3 style='margin-left:30%;font-family:Raleway'> ".$description."<span style='background:#00687f;font-size:50%;padding:5px;color:white;margin-left:40px;'>".$votes." votes</span></h3>";
     }
     echo "<h5 style='margin-left:30%;font-family:Raleway'>Slot is closed for voting</h5>";
@@ -115,6 +116,7 @@ $details = $wpdb->get_results (
 foreach($details as $key=>$val)
     {			
         $description = $val->description;
+        //building display for voting form
         echo "<input style='margin-left:30%;' checked type='radio' name='radio-buttons-for-voting' id='vote-".$key."' value='".$description."'>
                             <label class='voting-labels' for='".$key."'> ".$description."</label><br>";
     }
