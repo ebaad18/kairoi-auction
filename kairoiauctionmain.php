@@ -1,14 +1,17 @@
 <?php
 if( !defined('ABSPATH')){ 
 	die;
-} 
+}
+
+//this function is called from the plugin config file and is a view that opens up when the shortcode is called
+
 function kairoi_auction_main(){
-    global $wpdb;
-    global $count;
-    $count = 0;
-    global $array_for_display;
-    $array_for_display = array();
-    $table_name = 'wp_kairoi_bids';
+    global $wpdb; //global variable for manipulation WordPress database
+    global $count; //this count stores the total number of bids that have been submitted
+    $count = 0; //begins with zero
+    global $array_for_display; //this array stores the descriptions of all the bids
+    $array_for_display = array(); 
+    $table_name = 'wp_kairoi_bids'; //for getting all bids
     $details = $wpdb->get_results (
             "
             SELECT *
@@ -18,12 +21,12 @@ function kairoi_auction_main(){
     foreach($details as $key=>$val)
         {	
             $description = $val->description;
-            array_push($array_for_display,$description);
+            array_push($array_for_display,$description); //pushing the descriptions in the array
             $count++;	
             
         }
 
-    $table_name = 'wp_kairoi_auction_master';
+    $table_name = 'wp_kairoi_auction_master'; //for displaying the total time remaining
     $details = $wpdb->get_results (
             "
             SELECT *
@@ -46,13 +49,15 @@ function kairoi_auction_main(){
     <image id="bg-img" src="wp-content/plugins/kairoiauction/assets/main-page-bg-1.png" >
 
     <?php 
-        if($count>1){
-        for($i = 0 ; $i < 30 ; $i++){
-        echo "<h5 class='floating' style='color:#00687f;
-        position:absolute;
-        z-index:4; 
-        left:".rand(0,90)."%;  top:".rand(0,85)."%; opacity:0.".rand(0,100)."'>".$array_for_display[(rand(0,$count-1))]."<br>";
-    }}?>
+        if($count>1) //for when there are more than 1 bids submitted, only then will the code be executed
+        {
+            for($i = 0 ; $i < 30 ; $i++){
+            echo "<h5 class='floating' style='color:#00687f;
+            position:absolute;
+            z-index:4; 
+            left:".rand(0,90)."%;  top:".rand(0,85)."%; opacity:0.".rand(0,100)."'>".$array_for_display[(rand(0,$count-1))]."<br>";
+            }
+        }?>
     
     <h2 id="main-heading" class="main-heading-center" onclick="add_styles()" style="position:absolute; 
     top: 46%;
