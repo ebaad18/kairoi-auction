@@ -182,7 +182,7 @@ function button1($description_from_form){
 ?>
 <div class="footer-div">
   <div class="col-img" style="width:12%;background:#44474c;float:left;padding:10px;width:100px;">
-  <img src="http://localhost/kairoi/wp-content/uploads/2020/10/fmi.jpg">
+  <img src="https://kairoi.in/wp-content/uploads/2020/10/fmi.jpg">
   </div>
   <div class="col-empty">
   </div>
