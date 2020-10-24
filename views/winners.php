@@ -113,7 +113,7 @@ textarea{
     margin-top: 2% !important;
 }
 </style>
-<div class="nav-bar-icon" onclick="openNav()">&#9776;</div>
+<div class="nav-bar-icon-pages" onclick="openNav()">&#9776;</div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2 most-recent">

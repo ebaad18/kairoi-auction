@@ -64,7 +64,7 @@ hr{
     border-top: 1px dashed #00687f;
 }
 </style>
-<div class="nav-bar-icon" onclick="openNav()">&#9776;</div>
+<div class="nav-bar-icon-pages" onclick="openNav()">&#9776;</div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2"></div>
