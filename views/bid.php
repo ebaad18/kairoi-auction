@@ -168,7 +168,7 @@ exit();
 }     
 ?>
 <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
-<div class="nav-bar-icon" onclick="openNav()">&#9776;</div>
+<div class="nav-bar-icon-pages" onclick="openNav()">&#9776;</div>
 <h2 class="bid-heading"  style="position:absolute; 
     top: 20%;
     left:50%;
