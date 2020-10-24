@@ -119,6 +119,20 @@ function on_activate()
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php'); //to call dbDelta
 		dbDelta($table); //dbDelta function is located at upgrade.php
 	}
+
+	// checking and then making table for storing all winners (manual entry for starters, form to be developed later)
+
+	if (count($wpdb->get_results("SHOW TABLES LIKE 'wp_kairoi_winners'"))==0){
+		$table = "CREATE TABLE wp_kairoi_winners (
+						winner_sno INT NOT NULL AUTO_INCREMENT,
+						nickname VARCHAR(40) NOT NULL,
+						slot_time INT NOT NULL,
+						description VARCHAR(100) NOT NULL,
+						PRIMARY KEY  (winner_sno)
+		) $charset_collate;";
+		require_once( ABSPATH . 'wp-admin/includes/upgrade.php'); //to call dbDelta
+		dbDelta($table); //dbDelta function is located at upgrade.php
+	}
 }
 register_activation_hook( __FILE__ , 'on_activate' );
 
