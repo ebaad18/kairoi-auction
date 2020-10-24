@@ -84,13 +84,37 @@ hr{
     color: #44474c;
     border-top: 1px dashed #00687f;
 }
+input[type="text"], input[type="email"]{
+    height:65px;
+    width:50%;
+    font-size:24px;
+    margin-top: 2%;
+}
+input[type="email"]{
+    width:100%;
+}
+textarea{
+    width:100%;
+    font-size:24px;
+    margin-top: 2%;
+
+}
+.contact-button{
+    font-size:24px !important;
+    border-radius: 0px !important;
+    background:#00687 !important;
+    padding:5px !important;
+    color:white !important;
+    font-family:'Raleway' !important;
+    margin-top: 2% !important;
+}
 </style>
 <div class="nav-bar-icon" onclick="openNav()">&#9776;</div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-            <h2><b>Contact</b></h2>
+            <h1 style="text-align:center;margin-bottom:4%;"><b class="contact-page-heading">Contact</b></h1>
             <form method="post"> 
                 <input type="text" name="name" placeholder="Enter Name" style="font-family:'Raleway';"/>
 
@@ -100,16 +124,12 @@ hr{
                 style="font-family:'Raleway';"></textarea>
  
                 <input type="submit" name="submit_info"
-                        class="button" value="Submit" style="
-                border-radius: 0px;
-                background:#00687f;
-                padding:5px;
-                color:white;
-                font-family:Raleway;"/> 
+                        class="button contact-button" value="Submit"/> 
             </form>   
         </div>
         <div class="col-sm-2"></div>
     </div>
+    <br><br><br><br><br><br><br>
 </div>
 
 <div class="footer-div">
