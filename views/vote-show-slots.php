@@ -81,33 +81,33 @@ foreach($details as $key=>$val)
 ?>
 <style>
 .winner {
-  border-left: 25px solid green;
+  border-left: 25px solid #73a657;
   height: 250px;
   text-align:center;
 }
 .open {
-  border-left: 25px solid blue;
+  border-left: 25px solid #00687f;
   height: 250px;
   text-align:center;
 }
 .not-created {
-  border-left: 25px solid grey;
+  border-left: 25px solid #d3d3d3;
   height: 250px;
   text-align:center;
 }
 
 .winner-phone{
-  border-top: 25px solid green;
+  border-top: 25px solid #73a657;
   width: 50%;
   text-align:center;
 }
 .open-phone{
-  border-top: 25px solid blue;
+  border-top: 25px solid #00687f;
   width: 50%;
   text-align:center;
 }
 .not-created-phone{
-  border-top: 25px solid grey;
+  border-top: 25px solid #d3d3d3;
   width: 50%;
   text-align:center;
 }
@@ -218,7 +218,7 @@ if($max_no==15){
     left:50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> Vote</h2> 
-    <image class="vote-slots-page-bg" src="../../wp-content/plugins/kairoiauction/assets/vote-bg-phone.png" >
+    <image class="vote-slots-page-bg" src="../../wp-content/plugins/kairoiauction/assets/vote-bg-phone.png" style="height:1000px;">
     
     
 <?php 
@@ -229,7 +229,7 @@ if($max_no==10){
             echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Winner is decided''><span class='winner-phone' style='
             position:absolute;
             left:50%; 
-            top:".(20+$i*10)."%;
+            top:".(15+$i*4)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
         
@@ -237,7 +237,7 @@ if($max_no==10){
             echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Slot open for voting'><span class='open-phone' style='
             position:absolute;
             left:50%; 
-            top:".(20+$i*10)."%;
+            top:".(15+$i*4)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
 
@@ -245,7 +245,7 @@ if($max_no==10){
             echo"<a href='#' title='Slot not generated yet'><span class='not-created-phone' style='
             position:absolute;
             left:50%; 
-            top:".(20+$i*10)."%;
+            top:".(15+$i*4)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
     }
@@ -256,7 +256,7 @@ if($max_no==20){
             echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Winner is decided''><span class='winner-phone' style='
             position:absolute; 
             left:50%;
-            top:".(20+$i*10)."%;
+            top:".(15+$i*4)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
         
@@ -264,7 +264,7 @@ if($max_no==20){
             echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Slot open for voting'><span class='open-phone' style='
             position:absolute;
             left:50%; 
-            top:".(20+$i*10)."%;
+            top:".(15+$i*4)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
 
@@ -272,7 +272,7 @@ if($max_no==20){
             echo"<a href='#' title='Slot not generated yet'><span class='not-created-phone' style='
             position:absolute;
             left:50%; 
-            top:".(20+$i*10)."%;
+            top:".(15+$i*4)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
     }
@@ -283,7 +283,7 @@ if($max_no==15){
             echo"<a href='slot-".$array_for_winners_slot_sno[$i]."' title='Winner is decided'/'><span class='winner-phone' style='
             position:absolute;
             left:50%; 
-            top:".(20+$i*10)."%;
+            top:".(15+$i*4)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
         
@@ -291,7 +291,7 @@ if($max_no==15){
             echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Slot open for voting'><span class='open-phone' style='
             position:absolute;
             left:50%; 
-            top:".(20+$i*10)."%;
+            top:".(15+$i*4)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
 
@@ -299,7 +299,7 @@ if($max_no==15){
             echo"<a href='#' title='Slot not generated yet'><span class='not-created-phone' style='
             position:absolute;
             left:50%; 
-            top:".(20+$i*10)."%;
+            top:".(15+$i*4)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
     }
