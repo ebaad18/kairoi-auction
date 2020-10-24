@@ -76,6 +76,7 @@ function on_activate()
 						created_on DATETIME NOT NULL,
 						no_of_bids INT NOT NULL,
 						is_slot_open_for_voting BOOLEAN DEFAULT 0,
+						opened_for_voting_on DATETIME,
 						voted_ips VARCHAR(4000) NOT NULL,
 						PRIMARY KEY  (slot_sno),
                         FOREIGN KEY (slot_time_sno) REFERENCES wp_kairoi_slot_time(slot_time_sno)
@@ -99,6 +100,21 @@ function on_activate()
 						PRIMARY KEY  (bid_sno),
                         FOREIGN KEY (slot_sno) REFERENCES wp_kairoi_slots(slot_sno),
                         FOREIGN KEY (user_sno) REFERENCES wp_kairoi_bidding_users(user_sno)
+		) $charset_collate;";
+		require_once( ABSPATH . 'wp-admin/includes/upgrade.php'); //to call dbDelta
+		dbDelta($table); //dbDelta function is located at upgrade.php
+	}
+
+	// checking and then making table for storing all entries from the contact form
+
+	if (count($wpdb->get_results("SHOW TABLES LIKE 'wp_kairoi_contacts'"))==0){
+		$table = "CREATE TABLE wp_kairoi_contacts (
+						contact_sno INT NOT NULL AUTO_INCREMENT,
+						name VARCHAR(40) NOT NULL,
+						email VARCHAR(40) NOT NULL,
+						comment VARCHAR(100) NOT NULL,
+						posted_on DATETIME NOT NULL,
+						PRIMARY KEY  (contact_sno)
 		) $charset_collate;";
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php'); //to call dbDelta
 		dbDelta($table); //dbDelta function is located at upgrade.php
