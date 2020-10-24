@@ -160,10 +160,10 @@ textarea{
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="/about"><h5>About</h5></a>
-    <a href="#"><h5>Instructions</h5></a>
+    <a href="/instructions"><h5>Instructions</h5></a>
     <a href="/rules"><h5>Rules</h5></a>
     <a href="/winners"><h5>Winners</h5></a>
-    <a href="/contact"><h5>Contact</h5></a>
+    <a href="#"><h5>Contact</h5></a>
     <hr style="width:40%;">
     <a href="#" style="pointer-events:none"><h5>&#8826; social &#8827;</h5></a>
     <a href="https://www.instagram.com/kairoi.thetimes/" style="display:inline" target="_blank"><i class="fa fa-instagram" style="font-size:35px;color:#818181;"></i></a>
