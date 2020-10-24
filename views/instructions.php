@@ -103,7 +103,7 @@ hr{
   <div class="col-empty mobile-hide">
   </div>
   <div class="col-img" style="width:150px;margin-top:10px;">
-    <img src="http://localhost/kairoi/wp-content/uploads/2020/10/GI-MMB-horizontal-white-s-RGB-web.png">
+    <img src="https://kairoi.in/wp-content/uploads/2020/10/GI-MMB-horizontal-white-s-RGB-web-1.png">
   </div>
 </div>
 
