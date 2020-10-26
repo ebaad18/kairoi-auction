@@ -181,26 +181,26 @@ function button1($description_from_form){
         
 ?>
 <div class="footer-div">
-  <div class="col-img" style="width:12%;background:#44474c;float:left;padding:10px;width:100px;">
+  <div class="col-img" style="width:12%;background:#44474c;float:left;padding:10px;width:80px;">
   <img src="https://kairoi.in/wp-content/uploads/2020/10/fmi.jpg">
   </div>
   <div class="col-empty">
   </div>
   <div class="col-text">
-    <h4 style="font-family:'Raleway';color:white">Total Time: <?php echo $total_time ?></h4>
+    <h5 style="font-family:'Raleway';color:white">Total Time: <?php echo $total_time ?></h5>
   </div>
   <div class="col-text">
-    <h4 style="font-family:'Raleway';color:white">Time Left: <?php echo ($total_time - $time_consumed) ?> </h4>
+    <h5 style="font-family:'Raleway';color:white">Time Left: <?php echo ($total_time - $time_consumed) ?> </h5>
   </div>
   <div class="col-text mobile-hide">
-    <h4 style="font-family:'Raleway';color:white">Time in Auction: <?php echo $time_in_auction ?></h4>
+    <h5 style="font-family:'Raleway';color:white">Time in Auction: <?php echo $time_in_auction ?></h5>
   </div>
   <div class="col-text mobile-hide">
-    <h4 style="font-family:'Raleway';color:white">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h4>
+    <h5 style="font-family:'Raleway';color:white">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h5>
   </div>
   <div class="col-empty mobile-hide">
   </div>
-  <div class="col-img" style="width:150px;margin-top:10px;">
+  <div class="col-img" style="width:120px;margin-top:10px;">
     <img src="https://kairoi.in/wp-content/uploads/2020/10/GI-MMB-horizontal-white-s-RGB-web-1.png">
   </div>
 </div>
