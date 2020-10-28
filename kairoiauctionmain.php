@@ -47,7 +47,7 @@ function kairoi_auction_main(){
     <div id="mobile-center" style="position:relative; max-height:80%; max-width:100%;text-align:center" >
     
     
-    <image id="bg-img" src="wp-content/plugins/kairoiauction/assets/main-page-bg-1.png" >
+    <image id="bg-img" src="wp-content/plugins/kairoiauction/assets/main-page-bg-1-full.jpg" >
 
     <?php 
         if($count>1) //for when there are more than 1 bids submitted, only then will the code be executed
@@ -61,7 +61,7 @@ function kairoi_auction_main(){
         }?>
     
     <h2 id="main-heading" class="main-heading-center" onclick="add_styles()" style="position:absolute; 
-    top: 46%;
+    top: 45%;
     left:50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"><?php echo ($total_time - $time_consumed) ?></h2>
@@ -73,31 +73,31 @@ function kairoi_auction_main(){
     -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-5/">5 minutes</a> </h4>
 
     <h4 class="time-slots-main-page-heading slot-720" style="position:absolute; 
-    top: 29%;
-    left:69%;
+    top: 28%;
+    left:70%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-720/">12 hours</a> </h4>
     
     <h4 class="time-slots-main-page-heading slot-30" style="position:absolute; 
-    top: 46%;
-    left:77%;
+    top: 44%;
+    left:78%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-30/">30 minutes</a> </h4>
 
     <h4 class="time-slots-main-page-heading slot-1440" style="position:absolute; 
-    top: 71%;
+    top: 69%;
     left:71%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-1440/">1 day</a> </h4>
 
     <h4 class="time-slots-main-page-heading slot-360" style="position:absolute; 
-    top: 83%;
+    top: 81%;
     left:43%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-360/">6 hours</a> </h4>
 
     <h4 class="time-slots-main-page-heading slot-15" style="position:absolute; 
-    top: 58%;
+    top: 56%;
     left:20%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-15/">15 minutes</a> </h4>

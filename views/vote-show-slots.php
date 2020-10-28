@@ -94,7 +94,7 @@ foreach($details as $key=>$val)
   border-left: 25px solid #d3d3d3;
   height: 250px;
   text-align:center;
-  cursor: 'non-allowed';
+  cursor: not-allowed;
 }
 
 .winner-phone{
@@ -111,7 +111,7 @@ foreach($details as $key=>$val)
   border-top: 25px solid #d3d3d3;
   width: 50%;
   text-align:center;
-  cursor: 'non-allowed';
+  cursor: not-allowed;
 }
 
 </style>
