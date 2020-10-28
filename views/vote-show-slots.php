@@ -94,6 +94,7 @@ foreach($details as $key=>$val)
   border-left: 25px solid #d3d3d3;
   height: 250px;
   text-align:center;
+  cursor: 'non-allowed';
 }
 
 .winner-phone{
@@ -110,6 +111,7 @@ foreach($details as $key=>$val)
   border-top: 25px solid #d3d3d3;
   width: 50%;
   text-align:center;
+  cursor: 'non-allowed';
 }
 
 </style>
@@ -131,7 +133,7 @@ foreach($details as $key=>$val)
 if($max_no==10){
     for($i = 0 ; $i < $max_no ; $i++){
         if($i<count($array_for_winners_slot_sno))
-            echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Winner is decided''><span class='winner' style='
+            echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Voting closed''><span class='winner' style='
             position:absolute; 
             top: 67%;
             left:".(30+$i*5)."%;
@@ -139,7 +141,7 @@ if($max_no==10){
             -ms-transform: translate(-50%, -50%);'></span></a>";
         
         if($i>=count($array_for_winners_slot_sno)&&$i<(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
-            echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Slot open for voting'><span class='open' style='
+            echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Vote here'><span class='open' style='
             position:absolute; 
             top: 67%;
             left:".(30+$i*5)."%;
@@ -147,7 +149,7 @@ if($max_no==10){
             -ms-transform: translate(-50%, -50%);'></span></a>";
 
         if($i>=(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
-            echo"<a href='#' title='Slot not generated yet'><span class='not-created' style='
+            echo"<a href='#' title='Voting not open yet'><span class='not-created' style='
             position:absolute; 
             top: 67%;
             left:".(30+$i*5)."%;
@@ -158,7 +160,7 @@ if($max_no==10){
 if($max_no==20){
     for($i = 0 ; $i < $max_no ; $i++){
         if($i<count($array_for_winners_slot_sno))
-            echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Winner is decided''><span class='winner' style='
+            echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Voting closed''><span class='winner' style='
             position:absolute; 
             top: 67%;
             left:".(2+$i*5)."%;
@@ -166,7 +168,7 @@ if($max_no==20){
             -ms-transform: translate(-50%, -50%);'></span></a>";
         
         if($i>=count($array_for_winners_slot_sno)&&$i<(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
-            echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Slot open for voting'><span class='open' style='
+            echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Vote here'><span class='open' style='
             position:absolute; 
             top: 67%;
             left:".(2+$i*5)."%;
@@ -174,7 +176,7 @@ if($max_no==20){
             -ms-transform: translate(-50%, -50%);'></span></a>";
 
         if($i>=(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
-            echo"<a href='#' title='Slot not generated yet'><span class='not-created' style='
+            echo"<a href='#' title='Voting not open yet'><span class='not-created' style='
             position:absolute; 
             top: 67%;
             left:".(2+$i*5)."%;
@@ -185,7 +187,7 @@ if($max_no==20){
 if($max_no==15){
     for($i = 0 ; $i < $max_no ; $i++){
         if($i<count($array_for_winners_slot_sno)) //going through the winners array
-            echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Winner is decided''><span class='winner' style='
+            echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Voting closed''><span class='winner' style='
             position:absolute; 
             top: 67%;
             left:".(15+$i*5)."%;
@@ -193,7 +195,7 @@ if($max_no==15){
             -ms-transform: translate(-50%, -50%);'></span></a>";
         
         if($i>=count($array_for_winners_slot_sno)&&$i<(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno))) //going through the voting open array
-            echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Slot open for voting'><span class='open' style='
+            echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Vote here'><span class='open' style='
             position:absolute; 
             top: 67%;
             left:".(15+$i*5)."%;
@@ -201,7 +203,7 @@ if($max_no==15){
             -ms-transform: translate(-50%, -50%);'></span></a>";
 
         if($i>=(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
-            echo"<a href='#' title='Slot not generated yet'><span class='not-created' style='
+            echo"<a href='#' title='Voting not open yet'><span class='not-created' style='
             position:absolute; 
             top: 67%;
             left:".(15+$i*5)."%;
@@ -226,7 +228,7 @@ if($max_no==15){
 if($max_no==10){
     for($i = 0 ; $i < $max_no ; $i++){
         if($i<count($array_for_winners_slot_sno)) //going through the winners array
-            echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Winner is decided''><span class='winner-phone' style='
+            echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Voting closed''><span class='winner-phone' style='
             position:absolute;
             left:50%; 
             top:".(15+$i*4)."%;
@@ -234,7 +236,7 @@ if($max_no==10){
             -ms-transform: translate(-50%, -50%);'></span></a>";
         
         if($i>=count($array_for_winners_slot_sno)&&$i<(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno))) //going through the voting open array
-            echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Slot open for voting'><span class='open-phone' style='
+            echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Vote here'><span class='open-phone' style='
             position:absolute;
             left:50%; 
             top:".(15+$i*4)."%;
@@ -242,7 +244,7 @@ if($max_no==10){
             -ms-transform: translate(-50%, -50%);'></span></a>";
 
         if($i>=(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
-            echo"<a href='#' title='Slot not generated yet'><span class='not-created-phone' style='
+            echo"<a href='#' title='Voting not open yet'><span class='not-created-phone' style='
             position:absolute;
             left:50%; 
             top:".(15+$i*4)."%;
@@ -253,7 +255,7 @@ if($max_no==10){
 if($max_no==20){
     for($i = 0 ; $i < $max_no ; $i++){
         if($i<count($array_for_winners_slot_sno))
-            echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Winner is decided''><span class='winner-phone' style='
+            echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Voting closed''><span class='winner-phone' style='
             position:absolute; 
             left:50%;
             top:".(15+$i*4)."%;
@@ -261,7 +263,7 @@ if($max_no==20){
             -ms-transform: translate(-50%, -50%);'></span></a>";
         
         if($i>=count($array_for_winners_slot_sno)&&$i<(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
-            echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Slot open for voting'><span class='open-phone' style='
+            echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Vote here'><span class='open-phone' style='
             position:absolute;
             left:50%; 
             top:".(15+$i*4)."%;
@@ -269,7 +271,7 @@ if($max_no==20){
             -ms-transform: translate(-50%, -50%);'></span></a>";
 
         if($i>=(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
-            echo"<a href='#' title='Slot not generated yet'><span class='not-created-phone' style='
+            echo"<a href='#' title='Voting not open yet'><span class='not-created-phone' style='
             position:absolute;
             left:50%; 
             top:".(15+$i*4)."%;
@@ -280,7 +282,7 @@ if($max_no==20){
 if($max_no==15){
     for($i = 0 ; $i < $max_no ; $i++){
         if($i<count($array_for_winners_slot_sno))
-            echo"<a href='slot-".$array_for_winners_slot_sno[$i]."' title='Winner is decided'/'><span class='winner-phone' style='
+            echo"<a href='slot-".$array_for_winners_slot_sno[$i]."' title='Voting closed''><span class='winner-phone' style='
             position:absolute;
             left:50%; 
             top:".(15+$i*4)."%;
@@ -288,7 +290,7 @@ if($max_no==15){
             -ms-transform: translate(-50%, -50%);'></span></a>";
         
         if($i>=count($array_for_winners_slot_sno)&&$i<(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
-            echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Slot open for voting'><span class='open-phone' style='
+            echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Vote here'><span class='open-phone' style='
             position:absolute;
             left:50%; 
             top:".(15+$i*4)."%;
@@ -296,7 +298,7 @@ if($max_no==15){
             -ms-transform: translate(-50%, -50%);'></span></a>";
 
         if($i>=(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
-            echo"<a href='#' title='Slot not generated yet'><span class='not-created-phone' style='
+            echo"<a href='#' title='Voting not open yet'><span class='not-created-phone' style='
             position:absolute;
             left:50%; 
             top:".(15+$i*4)."%;
