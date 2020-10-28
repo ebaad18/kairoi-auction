@@ -169,11 +169,11 @@ exit();
 ?>
 <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
 <div class="nav-bar-icon-pages" onclick="openNav()">&#9776;</div>
-<h2 class="bid-heading"  style="position:absolute; 
+<h3 class="bid-heading"  style="position:absolute; 
     top: 20%;
     left:50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> <?php echo $minute_from_url; ?> minutes</h2>
+    -ms-transform: translate(-50%, -50%);"> <?php echo $minute_from_url; ?> minutes</h3>
     <form method="post"> 
     
 

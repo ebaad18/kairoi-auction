@@ -118,12 +118,12 @@ foreach($details as $key=>$val)
 <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
 <div class="nav-bar-icon-pages" onclick="openNav()">&#9776;</div>
 <div class="vote-slots-desktop" style="position:relative; max-height:80%; max-width:100%; text-align:center; margin-top: 10%;" >
-    <h2 class="vote-slots-heading"  style="z-index:3;
+    <h3 class="vote-slots-heading"  style="z-index:3;
     position:absolute; 
     top: 0%;
     left:50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> Vote</h2> 
+    -ms-transform: translate(-50%, -50%);"> Vote</h3> 
     <image class="vote-slots-page-bg" src="../../wp-content/plugins/kairoiauction/assets/vote-bg-desktop.png" >
     
     

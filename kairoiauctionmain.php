@@ -124,11 +124,10 @@ function kairoi_auction_main(){
         <i onclick="copy_url()" class="fa fa-share-alt" style="font-size:35px;color:#818181;padding-left:20px;cursor:pointer"></i>      
     </div>
 
-
-    
     <script>
         // var temp = document.getElementsByClassName("site-content")[0];
         // temp.setAttribute("style", "background-image:url('wp-content/plugins/kairoiauction/assets/main-page-bg.png'); background-position: center;background-repeat: no-repeat;background-size: contain;");
+        
         function add_styles(){
             var element = document.getElementById("main-heading");
             element.classList.add("no-border");

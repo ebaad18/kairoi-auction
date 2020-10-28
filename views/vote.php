@@ -63,11 +63,11 @@ foreach($details as $key=>$val)
 <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
 <div class="nav-bar-icon-pages" onclick="openNav()">&#9776;</div>
 <div style="position:relative; max-height:80%; max-width:100%; text-align:left; margin-top: 10%;" >
-    <h2 class="vote-heading"  style="position:absolute; 
+    <h3 class="vote-heading"  style="position:absolute; 
     top: -5%;
     left:50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> <?php echo $time_from_url; ?> minutes</h2>
+    -ms-transform: translate(-50%, -50%);"> <?php echo $time_from_url; ?> minutes</h3>
 <?php
 
 global $wpdb;

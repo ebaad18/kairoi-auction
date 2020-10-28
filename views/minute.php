@@ -143,14 +143,14 @@ function get_slot_sno(){
 <div style="position:relative; max-height:80%; max-width:100%; text-align:center; margin-top: 10%;" >
 
     
-    <h2 class="minute-heading"  style="z-index:3;
+    <h3 class="minute-heading"  style="z-index:3;
     position:absolute; 
     top: 0%;
     left:51%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> <?php echo $time_from_url; ?> minutes</h2> 
+    -ms-transform: translate(-50%, -50%);"> <?php echo $time_from_url; ?> minutes</h3> 
     <image class="minute-page-bg" src="../wp-content/plugins/kairoiauction/assets/minute-page-bg.png" >
-    <h3><a class="minute-page-bid-link" href="slot-<?php echo $slot_sno?>/bid/" style="position:absolute; 
+    <h4><a class="minute-page-bid-link" href="slot-<?php echo $slot_sno?>/bid/" style="position:absolute; 
     top: 85%;
     left:28%;
     transform: translate(-50%, -50%);
@@ -158,9 +158,9 @@ function get_slot_sno(){
     background:#00687f;
     padding:5px;
     color:white;
-    font-family:Raleway;">Start bidding</a></h3>
+    font-family:Raleway;">Bid</a></h4>
     
-    <h3><a class="minute-page-vote-link" href="vote/" style="position:absolute; 
+    <h4><a class="minute-page-vote-link" href="vote/" style="position:absolute; 
     top: 85%;
     left:72%;
     transform: translate(-50%, -50%);
@@ -168,7 +168,7 @@ function get_slot_sno(){
     background:#00687f;
     padding:5px;
     color:white;
-    font-family:Raleway;">Vote bid</a></h3>
+    font-family:Raleway;">Vote</a></h4>
 </div>
 </div>
 <div class="footer-div">
