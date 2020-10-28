@@ -60,8 +60,8 @@ h4{
 }
 hr{
     width:20%;
-    color: #44474c;
-    border-top: 1px dashed #00687f;
+    color: #2bbdcd;
+    border-top: 1px dashed #2bbdcd;
 }
 </style>
 <div class="nav-bar-icon-pages" onclick="openNav()">&#9776;</div>
