@@ -22,12 +22,12 @@ foreach($details as $key=>$val)
 <div class="nav-bar-icon-pages" onclick="openNav()">&#9776;</div>
 <div class="mobile-center" style="position:relative; max-height:80%; max-width:100%; text-align:center; margin-top: 10%;" >
     
-    <h2 class="thank-you-heading"  style="position:absolute;
+    <h3 class="thank-you-heading"  style="position:absolute;
     z-index:3; 
     top: -0%;
     left:50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> Thank you for engaging!</h2> 
+    -ms-transform: translate(-50%, -50%);"> Thank you for engaging!</h3> 
     <image class="thank-page-bg" src="../../../wp-content/plugins/kairoiauction/assets/thank-page-bg.png" >
 
     <a class="thank-page-bid-link" href="../../../" style="position:absolute; 
