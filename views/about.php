@@ -60,8 +60,8 @@ h2::before{
 }
 hr{
     width:20%;
-    color: #44474c;
-    border-top: 1px dashed #00687f;
+    color: #2bbdcd;
+    border-top: 1px dashed #2bbdcd;
 }
 </style>
 <div class="nav-bar-icon-pages" onclick="openNav()">&#9776;</div>
@@ -71,7 +71,7 @@ hr{
         <div class="col-sm-8">
             <h2>About <b>KAIROI Time Auction</h2>
             <br>
-            <h4><b>KAIROI Time Auction is an auction of time collected by a time-sensitive vending machine- KAIROI by <a href="https://sonamchaturvedi.com/">Sonam</a>. The machine is the closest embodiment of capitalism’s spatial and temporal shrinkage. Two vending machines were installed at Max Mueller Bhavan (New Delhi and Kolkata) for 6-months collecting time. Instead of money it took time as an input; one had to stand in front of the machine with one’s finger on the simulated-biometric scanner, and ‘spend’ time to get a product (snacks). The time you see here i.e.33550 minutes [23 days: 7 hours: 10 minutes] has been accumulated by the machines from the users/ participants at the venues, and is put for auction here through non-monetary bids in the form of acts/ happenings. Go to <a href="instructions">instructions</a> to know how you can bid and get the agency to occupy this time. Read more about the machine and its documentation <a href="https://sonamchaturvedi.com/kairoi/">here</a>.</b></h4>
+            <h4><b>KAIROI Time Auction is an auction of time collected by a time-sensitive vending machine- KAIROI by <a href="https://sonamchaturvedi.com/">sonam</a>. The machine is the closest embodiment of capitalism’s spatial and temporal shrinkage. Two vending machines were installed at Goethe-Institut/ Max Mueller Bhavan (New Delhi and Kolkata) for 6-months collecting time. Instead of money it took time as an input; one had to stand in front of the machine with one’s finger on the simulated-biometric scanner, and ‘spend’ time to get a product (snacks). The time you see here i.e.33550 minutes [23 days: 7 hours: 10 minutes] has been accumulated by the machines from the users/ participants at the venues, and is put for auction here through non-monetary bids in the form of acts/ happenings. Go to <a href="instructions">instructions</a> to know how you can bid and get the agency to occupy this time. Read more about the machine and its documentation <a href="https://sonamchaturvedi.com/kairoi/">here</a>.</b></h4>
             <hr align="left">
             <h4><b><i>KAIROI is realised within the framework of Five Million Incidents 2019-2020 supported by Goethe-Institut / Max Mueller Bhavan in collaboration with Raqs Media Collective. Technical support: <a href="https://www.facebook.com/BananaHouseMakerspace/">Banana House</a> (New Delhi) and Ebaad Ansari.</i></b></h4>
         </div>

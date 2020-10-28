@@ -69,8 +69,8 @@ hr{
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-            <h2><b>Rules of Action</b></h2>
-            <h3><b>I. Harm/Damage</b> (A,B,C,D,E)</h3>
+            <h2><b>Rules of Auction</b></h2>
+            <h3><b>I. Harm/Damage</b> (A,B,C)</h3>
             <h4>The bidder must not propose an occupation of time which requires the involved parties to indulge in any kind of: physical or mental self-harm</h4>
             <h4>A. harm to another. </h4>
             <h4>B. harm to any property.</h4>
