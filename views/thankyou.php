@@ -24,16 +24,16 @@ foreach($details as $key=>$val)
     
     <h3 class="thank-you-heading"  style="position:absolute;
     z-index:3; 
-    top: -0%;
+    top: 16%;
     left:50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> Thank you for engaging!</h3> 
-    <image class="thank-page-bg" src="../../../wp-content/plugins/kairoiauction/assets/thank-page-bg.png" >
+    <image class="thank-page-bg" style="margin-top:36px;" src="../../../wp-content/plugins/kairoiauction/assets/thank-page-bg.png" >
 
     <a class="thank-page-bid-link" href="../../../" style="position:absolute; 
-    top: 95%;
+    top: 100%;
     left:33%;
-    height:27%;
+    height:40%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background:#00687f;
@@ -41,9 +41,9 @@ foreach($details as $key=>$val)
     color:white;"><img style="height:50px;width:50px;diplay:inline" src="../../../wp-content/plugins/kairoiauction/assets/loop.png"><h4 style="display:inline;vertical-align:20px;">Bid</h4></a>
     
     <a class="thank-page-vote-link" href="../../vote/" style="position:absolute; 
-    top: 95%;
+    top: 100%;
     left:68%;
-    height:27%;
+    height:40%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background:#00687f;

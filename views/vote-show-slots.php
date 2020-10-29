@@ -135,7 +135,7 @@ if($max_no==10){
         if($i<count($array_for_winners_slot_sno))
             echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Voting closed''><span class='winner' style='
             position:absolute; 
-            top: 67%;
+            top: 68%;
             left:".(30+$i*5)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
@@ -143,7 +143,7 @@ if($max_no==10){
         if($i>=count($array_for_winners_slot_sno)&&$i<(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
             echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Vote here'><span class='open' style='
             position:absolute; 
-            top: 67%;
+            top: 68%;
             left:".(30+$i*5)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
@@ -151,7 +151,7 @@ if($max_no==10){
         if($i>=(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
             echo"<a href='#' title='Voting not open yet'><span class='not-created' style='
             position:absolute; 
-            top: 67%;
+            top: 68%;
             left:".(30+$i*5)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
@@ -162,7 +162,7 @@ if($max_no==20){
         if($i<count($array_for_winners_slot_sno))
             echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Voting closed''><span class='winner' style='
             position:absolute; 
-            top: 67%;
+            top: 68%;
             left:".(2+$i*5)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
@@ -170,7 +170,7 @@ if($max_no==20){
         if($i>=count($array_for_winners_slot_sno)&&$i<(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
             echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Vote here'><span class='open' style='
             position:absolute; 
-            top: 67%;
+            top: 68%;
             left:".(2+$i*5)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
@@ -178,7 +178,7 @@ if($max_no==20){
         if($i>=(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
             echo"<a href='#' title='Voting not open yet'><span class='not-created' style='
             position:absolute; 
-            top: 67%;
+            top: 68%;
             left:".(2+$i*5)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
@@ -189,7 +189,7 @@ if($max_no==15){
         if($i<count($array_for_winners_slot_sno)) //going through the winners array
             echo"<a href='slot-".$array_for_winners_slot_sno[$i]."/' title='Voting closed''><span class='winner' style='
             position:absolute; 
-            top: 67%;
+            top: 68%;
             left:".(15+$i*5)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
@@ -197,7 +197,7 @@ if($max_no==15){
         if($i>=count($array_for_winners_slot_sno)&&$i<(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno))) //going through the voting open array
             echo"<a href='slot-".$array_for_voting_slot_sno[($i-count($array_for_winners_slot_sno))]."/' title='Vote here'><span class='open' style='
             position:absolute; 
-            top: 67%;
+            top: 68%;
             left:".(15+$i*5)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
@@ -205,7 +205,7 @@ if($max_no==15){
         if($i>=(count($array_for_winners_slot_sno)+count($array_for_voting_slot_sno)))
             echo"<a href='#' title='Voting not open yet'><span class='not-created' style='
             position:absolute; 
-            top: 67%;
+            top: 68%;
             left:".(15+$i*5)."%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);'></span></a>";
