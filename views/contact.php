@@ -137,16 +137,16 @@ textarea{
   <a href="https://www.facebook.com/fivemillionincidents/"><img src="https://kairoi.in/wp-content/uploads/2020/10/fmi.jpg"></a>
   </div>
   <div class="col-text">
-    <h5 style="font-family:'Raleway';color:white">Total Time: <?php echo $total_time ?></h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Total Time: <?php echo $total_time ?></h5>
   </div>
   <div class="col-text">
-    <h5 style="font-family:'Raleway';color:white">Time Left: <?php echo ($total_time - $time_consumed) ?> </h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Time Left: <?php echo ($total_time - $time_consumed) ?> </h5>
   </div>
   <div class="col-text mobile-hide">
-    <h5 style="font-family:'Raleway';color:white">Time in Auction: <?php echo $time_in_auction ?></h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Time in Auction: <?php echo $time_in_auction ?></h5>
   </div>
   <div class="col-text mobile-hide">
-    <h5 style="font-family:'Raleway';color:white">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h5>
   </div>
   <div class="col-img-2" style="margin-top:5px;">
     <a href="https://www.goethe.de/ins/in/en/m/kul/sup/fmi.html"><img src="https://kairoi.in/wp-content/uploads/2020/10/GI-MMB-horizontal-white-s-RGB-web-1.png"></a>
