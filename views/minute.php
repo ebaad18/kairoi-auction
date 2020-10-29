@@ -171,11 +171,10 @@ function get_slot_sno(){
     font-family:Raleway;">Vote</a></h4>
 </div>
 </div>
+
 <div class="footer-div">
-  <div class="col-img" style="width:12%;background:#44474c;float:left;padding:10px;width:80px;">
-  <img src="https://kairoi.in/wp-content/uploads/2020/10/fmi.jpg">
-  </div>
-  <div class="col-empty">
+  <div class="col-img-1" style="background:#44474c;float:left;padding:10px;">
+  <a href="https://www.facebook.com/fivemillionincidents/"><img src="https://kairoi.in/wp-content/uploads/2020/10/fmi.jpg"></a>
   </div>
   <div class="col-text">
     <h5 style="font-family:'Raleway';color:white">Total Time: <?php echo $total_time ?></h5>
@@ -189,10 +188,8 @@ function get_slot_sno(){
   <div class="col-text mobile-hide">
     <h5 style="font-family:'Raleway';color:white">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h5>
   </div>
-  <div class="col-empty mobile-hide">
-  </div>
-  <div class="col-img" style="width:120px;margin-top:10px;">
-    <img src="https://kairoi.in/wp-content/uploads/2020/10/GI-MMB-horizontal-white-s-RGB-web-1.png">
+  <div class="col-img-2" style="margin-top:5px;">
+    <a href="https://www.goethe.de/ins/in/en/m/kul/sup/fmi.html"><img src="https://kairoi.in/wp-content/uploads/2020/10/GI-MMB-horizontal-white-s-RGB-web-1.png"></a>
   </div>
 </div>
 
