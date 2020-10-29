@@ -70,7 +70,7 @@ foreach($details as $key=>$val)
     text-align:left;
     font-family:'Raleway';
     color: white;
-    background:#44474c;
+    background:#44474ccc;
 }
 a{
     color:white !important;
@@ -86,46 +86,22 @@ h1::before,h2::before,h3::before{
 hr{
     width:20%;
     color: #44474c;
-    border-top: 1px dashed #00687f;
-}
-input[type="text"], input[type="email"]{
-    height:65px;
-    width:50%;
-    font-size:24px;
-    margin-top: 2%;
-}
-input[type="email"]{
-    width:100%;
-}
-textarea{
-    width:100%;
-    font-size:24px;
-    margin-top: 2%;
-
-}
-.contact-button{
-    font-size:24px !important;
-    border-radius: 0px !important;
-    background:#00687f !important;
-    padding:5px !important;
-    color:white !important;
-    font-family:'Raleway' !important;
-    margin-top: 2% !important;
+    border-top: 1px dashed #2bbdcd;
 }
 </style>
 <div class="nav-bar-icon-pages" onclick="openNav()">&#9776;</div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2 most-recent">
-            <h2 style="color:#00687f;transform: rotateZ(270deg);margin-top:90%;margin-left:70%;text-align:right;border-bottom:2px dashed #00687f">Most Recent</h2>  
+            <h2 style="color:#2bbdcd;transform: rotateZ(270deg);margin-top:100%;margin-left:24%;text-align:right;border-bottom:2px dashed #2bbdcd">Most Recent</h2>  
         </div>
         <div class="col-sm-8">
             <h1 style="text-align:center;margin-bottom:4%;"><b class="contact-page-heading">Winners</b></h1>
-            <h2><?php echo $array_for_slot_time[0]; ?> minutes <span style="color:#00687f">//</span> <span style="font-size:40px;"><?php echo $array_for_description[0]; ?> </span><span style="color:#00687f"> by <?php echo $array_for_nickname[0]; ?> </span></h2>
-            <h2><?php echo $array_for_slot_time[1]; ?> minutes <span style="color:#00687f">//</span> <span style="font-size:40px;"><?php echo $array_for_description[1]; ?> </span><span style="color:#00687f"> by <?php echo $array_for_nickname[1]; ?> </span></h2>
-            <h2><?php echo $array_for_slot_time[2]; ?> minutes <span style="color:#00687f">//</span> <span style="font-size:40px;"><?php echo $array_for_description[2]; ?> </span><span style="color:#00687f"> by <?php echo $array_for_nickname[2]; ?> </span></h2>
-            <h2><?php echo $array_for_slot_time[3]; ?> minutes <span style="color:#00687f">//</span> <span style="font-size:40px;"><?php echo $array_for_description[3]; ?> </span><span style="color:#00687f"> by <?php echo $array_for_nickname[3]; ?> </span></h2>
-            <h2><?php echo $array_for_slot_time[4]; ?> minutes <span style="color:#00687f">//</span> <span style="font-size:40px;"><?php echo $array_for_description[4]; ?> </span><span style="color:#00687f"> by <?php echo $array_for_nickname[4]; ?> </span></h2>
+            <h2><?php echo $array_for_slot_time[0]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:40px;"><?php echo $array_for_description[0]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[0]; ?> </span></h2>
+            <h2><?php echo $array_for_slot_time[1]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:40px;"><?php echo $array_for_description[1]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[1]; ?> </span></h2>
+            <h2><?php echo $array_for_slot_time[2]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:40px;"><?php echo $array_for_description[2]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[2]; ?> </span></h2>
+            <h2><?php echo $array_for_slot_time[3]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:40px;"><?php echo $array_for_description[3]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[3]; ?> </span></h2>
+            <h2><?php echo $array_for_slot_time[4]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:40px;"><?php echo $array_for_description[4]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[4]; ?> </span></h2>
         </div>
         <div class="col-sm-2"></div>
     </div>
@@ -161,11 +137,15 @@ textarea{
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="/about"><h5>About</h5></a>
+    <br>
     <a href="/instructions"><h5>Instructions</h5></a>
+    <br>
     <a href="/rules"><h5>Rules</h5></a>
-    <a href="/winners"><h5>Winners</h5></a>
-    <a href="#"><h5>Contact</h5></a>
-    <hr style="width:40%;">
+    <br>
+    <a href="#"><h5>Winners</h5></a>
+    <br>
+    <a href="/contact"><h5>Contact</h5></a>
+    <hr style="margin-left:25px;width:30%;color:#2bbdcd"  align="left">
     <a href="#" style="pointer-events:none"><h5>&#8826; social &#8827;</h5></a>
     <a href="https://www.instagram.com/kairoi.thetimes/" style="display:inline" target="_blank"><i class="fa fa-instagram" style="font-size:35px;color:#818181;"></i></a>
     <a href="https://www.facebook.com/kairoi.thetimes/" style="display:inline" target="_blank"><i class="fa fa-facebook-square" style="font-size:35px;color:#818181;"></i></a>
