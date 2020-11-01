@@ -52,7 +52,7 @@ function kairoi_auction_main(){
     <?php 
         if($count>1) //for when there are more than 1 bids submitted, only then will the code be executed
         {
-            for($i = 0 ; $i < 30 ; $i++){
+            for($i = 0 ; $i < 10 ; $i++){
             echo "<h5 class='floating' style='color:#00687f;
             position:absolute;
             z-index:4; 
@@ -79,10 +79,10 @@ function kairoi_auction_main(){
     -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-720/">12 hours</a> </h4>
     
     <h4 class="time-slots-main-page-heading slot-30" style="position:absolute; 
-    top: 44%;
-    left:78%;
+    top: 44.5%;
+    left:75%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-30/">30 minutes</a> </h4>
+    -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-60/">1 hour</a> </h4>
 
     <h4 class="time-slots-main-page-heading slot-1440" style="position:absolute; 
     top: 69%;
@@ -98,15 +98,15 @@ function kairoi_auction_main(){
 
     <h4 class="time-slots-main-page-heading slot-15" style="position:absolute; 
     top: 56%;
-    left:20%;
+    left:19%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-15/">15 minutes</a> </h4>
 
     <h4 class="time-slots-main-page-heading slot-60" style="position:absolute; 
-    top: 29%;
+    top: 28%;
     left:28%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-60/">1 hour</a> </h4>
+    -ms-transform: translate(-50%, -50%);"> <a class="time-slot" href="minute-30/">30 minutes</a> </h4>
 
     </div>
 
@@ -123,12 +123,17 @@ function kairoi_auction_main(){
         <a href="https://www.facebook.com/kairoi.thetimes/" style="display:inline" target="_blank"><i class="fa fa-facebook-square" style="font-size:35px;color:#818181;"></i></a>
         <i onclick="copy_url()" class="fa fa-share-alt" style="font-size:35px;color:#818181;padding-left:20px;cursor:pointer"></i>      
     </div>
-
+    <audio id="myAudio">
+    <source src="wp-content/plugins/kairoiauction/assets/beep.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+    </audio>
     <script>
         // var temp = document.getElementsByClassName("site-content")[0];
         // temp.setAttribute("style", "background-image:url('wp-content/plugins/kairoiauction/assets/main-page-bg.png'); background-position: center;background-repeat: no-repeat;background-size: contain;");
         
         function add_styles(){
+            var x = document.getElementById("myAudio");        
+            x.play();
             var element = document.getElementById("main-heading");
             element.classList.add("no-border");
             var element = document.getElementById("mobile-center");

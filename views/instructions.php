@@ -72,11 +72,11 @@ hr{
             <h4>Step 1: Select the time you want to bid for and go to bidding section.</h4>
             <h4>Step 2: Bid by writing the activity you would be willing to do for that duration of time. Read the <a href="rules">rules</a> to keep in mind while deciding the activity. Note that the auction is non-monetary and the agency over the time can only be occuppied or possessed through an activity/ task.</h4>
             <h4>Step 3: Submit your bid. You can continue to bid for a different duration or go to vote.</h4>
-            <hr align="left">
             <h3><b>Instructions to vote</b></h3>
             <h4>Step 1: Select on the time you want to vote for and go to voting section.</h4>
             <h4>Step 2: Vote on the activity that you find most deserving to win in order to occupy that duration of time.</h4>
             <h4>Step 3: Submit your vote. You can continue to vote for a different duration/ timeslot or go to bid. Note that you can only vote once in any given timeslot.</h4>    
+            <br><br><br><br><br><br>
         </div>
         <div class="col-sm-2"></div>
     </div>
@@ -87,16 +87,16 @@ hr{
   <a href="https://www.facebook.com/fivemillionincidents/"><img src="https://kairoi.in/wp-content/uploads/2020/10/fmi.jpg"></a>
   </div>
   <div class="col-text">
-    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Total Time: <?php echo $total_time ?></h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:22px;margin-top:10px">Total Time: <?php echo $total_time ?></h5>
   </div>
   <div class="col-text">
-    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Time Left: <?php echo ($total_time - $time_consumed) ?> </h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:22px;margin-top:10px">Time Left: <?php echo ($total_time - $time_consumed) ?> </h5>
   </div>
   <div class="col-text mobile-hide">
-    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Time in Auction: <?php echo $time_in_auction ?></h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:22px;margin-top:10px">Time in Auction: <?php echo $time_in_auction ?></h5>
   </div>
   <div class="col-text mobile-hide">
-    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:22px;margin-top:10px">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h5>
   </div>
   <div class="col-img-2" style="margin-top:5px;">
     <a href="https://www.goethe.de/ins/in/en/m/kul/sup/fmi.html"><img src="https://kairoi.in/wp-content/uploads/2020/10/GI-MMB-horizontal-white-s-RGB-web-1.png"></a>

@@ -120,9 +120,9 @@ if($is_slot_open_for_voting==false&&$no_of_bids==5){
         $description = $val->description;
         $votes = $val->votes;
         //building display for winners display
-        echo "<h3 style='margin-left:30%;font-family:Raleway'> ".$description."<span style='background:#00687f;font-size:50%;padding:5px;color:white;margin-left:40px;'>".$votes." votes</span></h3>";
+        echo "<h3 style='margin-left:10%;font-family:Lato'> ".$description."<span style='background:#00687f;font-size:50%;padding:5px;color:white;margin-left:40px;'>".$votes." votes</span></h3>";
     }
-    echo "<h5 style='margin-left:30%;font-family:Raleway'>Slot is closed for voting</h5>";
+    echo "<h5 style='margin-left:10%;font-family:Lato'>Slot is closed for voting</h5>";
 
 }
 

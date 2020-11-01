@@ -97,11 +97,11 @@ hr{
         </div>
         <div class="col-sm-8">
             <h1 style="text-align:center;margin-bottom:4%;"><b class="contact-page-heading">Winners</b></h1>
-            <h2><?php echo $array_for_slot_time[0]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:40px;"><?php echo $array_for_description[0]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[0]; ?> </span></h2>
-            <h2><?php echo $array_for_slot_time[1]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:40px;"><?php echo $array_for_description[1]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[1]; ?> </span></h2>
-            <h2><?php echo $array_for_slot_time[2]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:40px;"><?php echo $array_for_description[2]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[2]; ?> </span></h2>
-            <h2><?php echo $array_for_slot_time[3]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:40px;"><?php echo $array_for_description[3]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[3]; ?> </span></h2>
-            <h2><?php echo $array_for_slot_time[4]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:40px;"><?php echo $array_for_description[4]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[4]; ?> </span></h2>
+            <h2><?php echo $array_for_slot_time[0]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:30px;"><?php echo $array_for_description[0]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[0]; ?> </span></h2>
+            <h2><?php echo $array_for_slot_time[1]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:30px;"><?php echo $array_for_description[1]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[1]; ?> </span></h2>
+            <h2><?php echo $array_for_slot_time[2]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:30px;"><?php echo $array_for_description[2]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[2]; ?> </span></h2>
+            <h2><?php echo $array_for_slot_time[3]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:30px;"><?php echo $array_for_description[3]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[3]; ?> </span></h2>
+            <h2><?php echo $array_for_slot_time[4]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:30px;"><?php echo $array_for_description[4]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[4]; ?> </span></h2>
         </div>
         <div class="col-sm-2"></div>
     </div>
@@ -114,16 +114,16 @@ hr{
   <a href="https://www.facebook.com/fivemillionincidents/"><img src="https://kairoi.in/wp-content/uploads/2020/10/fmi.jpg"></a>
   </div>
   <div class="col-text">
-    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Total Time: <?php echo $total_time ?></h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:22px;margin-top:10px">Total Time: <?php echo $total_time ?></h5>
   </div>
   <div class="col-text">
-    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Time Left: <?php echo ($total_time - $time_consumed) ?> </h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:22px;margin-top:10px">Time Left: <?php echo ($total_time - $time_consumed) ?> </h5>
   </div>
   <div class="col-text mobile-hide">
-    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Time in Auction: <?php echo $time_in_auction ?></h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:22px;margin-top:10px">Time in Auction: <?php echo $time_in_auction ?></h5>
   </div>
   <div class="col-text mobile-hide">
-    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:22px;margin-top:10px">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h5>
   </div>
   <div class="col-img-2" style="margin-top:5px;">
     <a href="https://www.goethe.de/ins/in/en/m/kul/sup/fmi.html"><img src="https://kairoi.in/wp-content/uploads/2020/10/GI-MMB-horizontal-white-s-RGB-web-1.png"></a>

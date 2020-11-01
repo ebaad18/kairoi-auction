@@ -148,8 +148,8 @@ function get_slot_sno(){
     top: 0%;
     left:51%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> <?php echo $time_from_url; ?> minutes</h3> 
-    <image class="minute-page-bg" src="../wp-content/plugins/kairoiauction/assets/minute-page-bg.png" >
+    -ms-transform: translate(-50%, -50%);">1 day/1440 minutes</h3> 
+    <?php if($time_from_url=='1440'){ echo "<image class='minute-page-bg' src='../wp-content/plugins/kairoiauction/assets/minute-page-bg.png' >";}?>
     <h4><a class="minute-page-bid-link" href="slot-<?php echo $slot_sno?>/bid/" style="position:absolute; 
     top: 85%;
     left:28%;

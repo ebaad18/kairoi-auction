@@ -35,7 +35,7 @@ foreach($details as $key=>$val)
 <style>
 .site{
     background: url('wp-content/plugins/kairoiauction/assets/content-bg.jpg');
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: 100%;
 }
 .container-fluid{
@@ -48,11 +48,11 @@ foreach($details as $key=>$val)
     background:#44474ccc;
 }
 a{
-    color:white !important;
+    color:#2bbdcd !important;
     text-decoration:underline;
 }
 a:hover{
-    color:white;
+    color:white !important;
     opacity:0.9;
 }
 h2::before{
@@ -71,9 +71,10 @@ hr{
         <div class="col-sm-8">
             <h2>About <b>KAIROI Time Auction</h2>
             <br>
-            <h4><b>KAIROI Time Auction is an auction of time collected by a time-sensitive vending machine- KAIROI by <a href="https://sonamchaturvedi.com/">sonam</a>. The machine is the closest embodiment of capitalism’s spatial and temporal shrinkage. Two vending machines were installed at Goethe-Institut/ Max Mueller Bhavan (New Delhi and Kolkata) for 6-months collecting time. Instead of money it took time as an input; one had to stand in front of the machine with one’s finger on the simulated-biometric scanner, and ‘spend’ time to get a product (snacks). The time you see here i.e.33550 minutes [23 days: 7 hours: 10 minutes] has been accumulated by the machines from the users/ participants at the venues, and is put for auction here through non-monetary bids in the form of acts/ happenings. Go to <a href="instructions">instructions</a> to know how you can bid and get the agency to occupy this time. Read more about the machine and its documentation <a href="https://sonamchaturvedi.com/kairoi/">here</a>.</b></h4>
+            <h4>KAIROI Time Auction is an auction of time collected by a time-sensitive vending machine- KAIROI by <a style="color:#2bbdcd" href="https://sonamchaturvedi.com/"  target="_blank">sonam</a>. The machine is the closest embodiment of capitalism’s spatial and temporal shrinkage. Two vending machines were installed at Goethe-Institut/ Max Mueller Bhavan (New Delhi and Kolkata) for 6-months collecting time. Instead of money it took time as an input; one had to stand in front of the machine with one’s finger on the simulated-biometric scanner, and ‘spend’ time to get a product (snacks). A vending machine is the closest embodiment of capitalism’s spatial and temporal shrinkage, but here the role of money is displaced by time in the exchange economy. It forces the user to slow down and experience the passing of time to get something, instead of rushing to their speeding lives of infinite accumulation.<br>The time you see here i.e.33550 minutes [23 days: 7 hours: 10 minutes] has been accumulated by the machines from the users/ participants at the venues, and is put for auction here through non-monetary bids in the form of acts/ happenings. Go to <a style="color:#2bbdcd" href="instructions">instructions</a> to know how you can bid and get the agency to occupy this time. Read more about the machine and its documentation <a style="color:#2bbdcd" href="https://sonamchaturvedi.com/kairoi/" target="_blank">here</a>.</h4>
             <hr align="left">
-            <h4><b><i>KAIROI is realised within the framework of Five Million Incidents 2019-2020 supported by Goethe-Institut / Max Mueller Bhavan in collaboration with Raqs Media Collective. Technical support: <a href="https://www.facebook.com/BananaHouseMakerspace/">Banana House</a> (New Delhi) and Ebaad Ansari.</i></b></h4>
+            <h4><i>KAIROI is realised within the framework of Five Million Incidents 2019-2020 supported by Goethe-Institut / Max Mueller Bhavan in collaboration with Raqs Media Collective. Technical support: <a style="color:#2bbdcd" href="https://www.facebook.com/BananaHouseMakerspace/"  target="_blank">Banana House</a> (New Delhi) and <a style="color:#2bbdcd" href="https://www.linkedin.com/in/ebaad-ansari-8832b881/"  target="_blank">Ebaad Ansari</a>.</i></h4>
+            <br><br><br><br><br><br><br><br>
         </div>
         <div class="col-sm-2"></div>
     </div>
@@ -83,16 +84,16 @@ hr{
   <a href="https://www.facebook.com/fivemillionincidents/"><img src="https://kairoi.in/wp-content/uploads/2020/10/fmi.jpg"></a>
   </div>
   <div class="col-text">
-    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Total Time: <?php echo $total_time ?></h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:22px;margin-top:10px">Total Time: <?php echo $total_time ?></h5>
   </div>
   <div class="col-text">
-    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Time Left: <?php echo ($total_time - $time_consumed) ?> </h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:22px;margin-top:10px">Time Left: <?php echo ($total_time - $time_consumed) ?> </h5>
   </div>
   <div class="col-text mobile-hide">
-    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Time in Auction: <?php echo $time_in_auction ?></h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:22px;margin-top:10px">Time in Auction: <?php echo $time_in_auction ?></h5>
   </div>
   <div class="col-text mobile-hide">
-    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:20px">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h5>
+    <h5 style="font-family:'Raleway';color:white;font-weight:bold;font-size:22px;margin-top:10px">Time Auctioned: <?php echo ($time_consumed - $time_in_auction) ?> </h5>
   </div>
   <div class="col-img-2" style="margin-top:5px;">
     <a href="https://www.goethe.de/ins/in/en/m/kul/sup/fmi.html"><img src="https://kairoi.in/wp-content/uploads/2020/10/GI-MMB-horizontal-white-s-RGB-web-1.png"></a>
