@@ -2,6 +2,41 @@
 require_once("../../../../wp-load.php");
 get_header(); //import header
 
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
+    $link = "https"; 
+else
+    $link = "http"; 
+  
+// Here append the common URL characters. 
+$link .= "://"; 
+  
+// Append the host(domain name, ip) to the URL. 
+$link .= $_SERVER['HTTP_HOST']; 
+  
+// Append the requested resource location to the URL 
+$link .= $_SERVER['REQUEST_URI']; 
+      
+// Print the link 
+// echo $link;
+
+$parts = parse_url($link);
+
+//for offset parameters
+$broken_parts= @explode('/', $parts[path]); //@ is used to suppress warnings
+$part_of_url = $broken_parts[3];
+echo $part_of_url;
+
+if($part_of_url == 'bid'){
+  echo "<div id='snackbar'>You will hear from us if you win the auction</div>
+
+  <script>
+
+  var x = document.getElementById('snackbar');
+  x.className = 'show';
+  setTimeout(function(){ x.className = x.className.replace('show', ''); }, 6000);
+  </script>";
+}    
+
 $table_name = 'wp_kairoi_auction_master'; //getting auction master for footer
 global $wpdb;
 $details = $wpdb->get_results (
