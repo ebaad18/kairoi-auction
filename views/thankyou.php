@@ -24,7 +24,6 @@ $parts = parse_url($link);
 //for offset parameters
 $broken_parts= @explode('/', $parts[path]); //@ is used to suppress warnings
 $part_of_url = $broken_parts[3];
-echo $part_of_url;
 
 if($part_of_url == 'bid'){
   echo "<div id='snackbar'>You will hear from us if you win the auction</div>
