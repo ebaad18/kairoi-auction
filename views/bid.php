@@ -227,11 +227,12 @@ exit();
     <a href="/winners"><h5>Winners</h5></a>
     <a href="/contact"><h5>Contact</h5></a>
     <hr style="margin-left:25px;width:30%;color:#2bbdcd"  align="left">
+    <div style="position:absolute;bottom:0px;">
     <a href="#" style="pointer-events:none"><h5>&#8826; social &#8827;</h5></a>
     <a href="https://www.instagram.com/kairoi.thetimes/" style="display:inline" target="_blank"><i class="fa fa-instagram" style="font-size:30px;color:#ffffff;"></i></a>
     <a href="https://www.facebook.com/kairoi.auction" style="display:inline" target="_blank"><i class="fa fa-facebook-square" style="font-size:30px;color:#ffffff;"></i></a>
     <a href="mailto:auction@kairoi.in" style="display:inline" target="_blank"><i class="fa fa-envelope-o" style="font-size:30px;color:#ffffff;"></i></a>
-    <i onclick="copy_url()" class="fa fa-share-alt" style="font-size:30px;color:#ffffff;padding-left:20px;cursor:pointer"></i>      
+    <i onclick="copy_url()" class="fa fa-share-alt" style="font-size:30px;color:#ffffff;padding-left:20px;cursor:pointer"></i></div>      
 </div>
 <script>
     function openNav() {
