@@ -67,7 +67,7 @@ foreach($details as $key=>$val)
     top: -5%;
     left:50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"> <?php echo $time_from_url; ?> minutes</h3>
+    -ms-transform: translate(-50%, -50%);"> <?php if($time_from_url=='1440'){ echo "&nbsp;1 day&nbsp;";}elseif($time_from_url=='720'){ echo "12 hours"; }elseif($time_from_url=='360'){ echo "6 hours"; }elseif($time_from_url=='60'){ echo "1 hour"; }elseif($time_from_url=='30'){ echo "30 minutes"; }elseif($time_from_url=='15'){ echo "15 minutes"; }else{ echo "5 minutes";}?></h3>
 <?php
 
 global $wpdb;
