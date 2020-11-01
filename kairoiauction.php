@@ -93,7 +93,7 @@ function on_activate()
 						slot_sno INT NOT NULL,
 						user_sno INT NOT NULL,
 						description VARCHAR(250) NOT NULL,
-						ip VARCHAR(20) NOT NULL,
+						ip VARCHAR(100) NOT NULL,
 						votes INT NOT NULL,
 						is_winner BOOLEAN DEFAULT 0,
 						bidded_on DATETIME NOT NULL,

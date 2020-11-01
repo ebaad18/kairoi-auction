@@ -59,7 +59,7 @@ else
 {
 $ip_address = $_SERVER['REMOTE_ADDR'];
 }
-
+echo $ip_address;
 $table_name = 'wp_kairoi_bids'; //getting all bids from this slot
 $details = $wpdb->get_results (
         "
@@ -139,6 +139,30 @@ function button1($nickname,$description,$email){ //posting a bid
         $wpdb->update('wp_kairoi_auction_master', array('time_in_auction'=>($time_in_auction + $temp)), array('sno'=>1)); //if a slot is full, then add to time in auction
         $wpdb->update('wp_kairoi_slots', array('is_slot_open_for_voting'=> true), array('slot_sno'=>$slot_sno_from_url)); //once a slot is full, it is open for voting
         $wpdb->update('wp_kairoi_slots', array('opened_for_voting_on'=> date('Y-m-d H:i:s')), array('slot_sno'=>$slot_sno_from_url)); //once a slot is full, voting opening timestamp is entered
+        $slot_time_sno;
+        
+        if($temp==5)
+        $slot_time_sno = 1;
+        elseif($temp==15)
+        $slot_time_sno = 2;
+        elseif($temp==30)
+        $slot_time_sno = 3;
+        elseif($temp==60)
+        $slot_time_sno = 4;
+        elseif($temp==360)
+        $slot_time_sno = 5;
+        elseif($temp==720)
+        $slot_time_sno = 6;
+        else
+        $slot_time_sno = 7;
+        
+        
+        $wpdb->insert("wp_kairoi_slots", array(
+            "slot_time_sno" => $slot_time_sno,
+            "no_of_bids" => 0,
+            "voted_ips" => '',
+            "created_on" => date('Y-m-d H:i:s'),
+            ));
     }
 
     $table_name = 'wp_kairoi_bidding_users';
