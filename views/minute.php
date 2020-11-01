@@ -148,11 +148,11 @@ function get_slot_sno(){
     top: 0%;
     left:51%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);"><?php if($time_from_url=='1440'){ echo "&nbsp;1 day&nbsp; ";}elseif($time_from_url=='720'){ echo "12 hours"; }elseif($time_from_url=='360'){ echo "6 hours"; }elseif($time_from_url=='60'){ echo "1 hour"; }elseif($time_from_url=='30'){ echo "30 minutes"; }elseif($time_from_url=='15'){ echo "15 minutes"; }else{ echo "5 minutes";}?></h3> 
+    -ms-transform: translate(-50%, -50%);"><?php if($time_from_url=='1440'){ echo "&nbsp;1 day&nbsp;";}elseif($time_from_url=='720'){ echo "12 hours"; }elseif($time_from_url=='360'){ echo "6 hours"; }elseif($time_from_url=='60'){ echo "1 hour"; }elseif($time_from_url=='30'){ echo "30 minutes"; }elseif($time_from_url=='15'){ echo "15 minutes"; }else{ echo "5 minutes";}?></h3> 
     <image class="minute-page-bg" src="../wp-content/plugins/kairoiauction/assets/minute-page-bg.png" >
     <h4><a class="minute-page-bid-link" href="slot-<?php echo $slot_sno?>/bid/" style="position:absolute; 
-    top: 85%;
-    left:28%;
+    top: 83%;
+    left:30%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background:#00687f;
@@ -161,7 +161,7 @@ function get_slot_sno(){
     font-family:Raleway;">Bid</a></h4>
     
     <h4><a class="minute-page-vote-link" href="vote/" style="position:absolute; 
-    top: 85%;
+    top: 83%;
     left:72%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
