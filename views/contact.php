@@ -76,7 +76,7 @@ a:hover{
     color:white;
     opacity:0.9;
 }
-h2::before{
+h2::before,h1::before{
     content:none;
 }
 hr{
@@ -100,13 +100,35 @@ textarea{
 
 }
 .contact-button{
-    font-size:24px !important;
+    font-size:24px;
     border-radius: 0px !important;
     background:#2bbdcd !important;
     padding:5px !important;
     color:white !important;
     font-family:'Raleway' !important;
     margin-top: 2% !important;
+}
+@media only screen and (max-width: 600px) {
+    input[type="text"], input[type="email"]{
+    height:35px;
+    width:50%;
+    font-size:16px;
+    margin-top: 2%;
+    }
+    input[type="email"]{
+        width:100%;
+    }
+    textarea{
+        width:100%;
+        font-size:16px;
+        margin-top: 2%;
+    }
+    .contact-button{
+        font-size:16px;
+    }
+    h1,h2{
+        font-size:99% !important;
+    }
 }
 </style>
 <div class="nav-bar-icon-pages" onclick="openNav()">&#9776;</div>

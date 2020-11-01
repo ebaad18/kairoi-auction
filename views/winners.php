@@ -88,6 +88,17 @@ hr{
     color: #44474c;
     border-top: 1px dashed #2bbdcd;
 }
+.winner-description{
+    font-size:30px;
+}
+@media only screen and (max-width: 600px) {
+    h1,h2{
+        font-size:99% !important;
+    }
+    .winner-description{
+    font-size:19px;
+}
+}
 </style>
 <div class="nav-bar-icon-pages" onclick="openNav()">&#9776;</div>
 <div class="container-fluid">
@@ -97,16 +108,13 @@ hr{
         </div>
         <div class="col-sm-8">
             <h1 style="text-align:center;margin-bottom:4%;"><b class="contact-page-heading">Winners</b></h1>
-            <h2><?php echo $array_for_slot_time[0]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:30px;"><?php echo $array_for_description[0]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[0]; ?> </span></h2>
-            <h2><?php echo $array_for_slot_time[1]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:30px;"><?php echo $array_for_description[1]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[1]; ?> </span></h2>
-            <h2><?php echo $array_for_slot_time[2]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:30px;"><?php echo $array_for_description[2]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[2]; ?> </span></h2>
-            <h2><?php echo $array_for_slot_time[3]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:30px;"><?php echo $array_for_description[3]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[3]; ?> </span></h2>
-            <h2><?php echo $array_for_slot_time[4]; ?> minutes <span style="color:#2bbdcd">//</span> <span style="font-size:30px;"><?php echo $array_for_description[4]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[4]; ?> </span></h2>
+            <h2><?php if($array_for_slot_time[0]=='1440'){ echo "&nbsp;1 day&nbsp;";}elseif($array_for_slot_time[0]=='720'){ echo "12 hours"; }elseif($array_for_slot_time[0]=='360'){ echo "6 hours"; }elseif($array_for_slot_time[0]=='60'){ echo "1 hour"; }elseif($array_for_slot_time[0]=='30'){ echo "30 minutes"; }elseif($array_for_slot_time[0]=='15'){ echo "15 minutes"; }else{ echo "5 minutes";}?> <span style="color:#2bbdcd">//</span> <span class="winner-description"><?php echo $array_for_description[0]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[0]; ?> </span></h2>
+            <h2><?php if($array_for_slot_time[1]=='1440'){ echo "&nbsp;1 day&nbsp;";}elseif($array_for_slot_time[1]=='720'){ echo "12 hours"; }elseif($array_for_slot_time[1]=='360'){ echo "6 hours"; }elseif($array_for_slot_time[1]=='60'){ echo "1 hour"; }elseif($array_for_slot_time[1]=='30'){ echo "30 minutes"; }elseif($array_for_slot_time[1]=='15'){ echo "15 minutes"; }else{ echo "5 minutes";}?> <span style="color:#2bbdcd">//</span> <span class="winner-description"><?php echo $array_for_description[1]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[1]; ?> </span></h2>
+            <h2><?php if($array_for_slot_time[2]=='1440'){ echo "&nbsp;1 day&nbsp;";}elseif($array_for_slot_time[2]=='720'){ echo "12 hours"; }elseif($array_for_slot_time[2]=='360'){ echo "6 hours"; }elseif($array_for_slot_time[2]=='60'){ echo "1 hour"; }elseif($array_for_slot_time[2]=='30'){ echo "30 minutes"; }elseif($array_for_slot_time[2]=='15'){ echo "15 minutes"; }else{ echo "5 minutes";}?> <span style="color:#2bbdcd">//</span> <span class="winner-description"><?php echo $array_for_description[2]; ?> </span><span style="color:#2bbdcd"> by <?php echo $array_for_nickname[2]; ?> </span></h2>
         </div>
         <div class="col-sm-2"></div>
     </div>
-    <br><br><br><br><br><br><br>
-    
+    <br><br><br><br><br><br><br><br><br><br><br>
 </div>
 
 <div class="footer-div">
