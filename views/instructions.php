@@ -76,7 +76,7 @@ hr{
             <h4>Step 1: Select on the time you want to vote for and go to voting section.</h4>
             <h4>Step 2: Vote on the activity that you find most deserving to win in order to occupy that duration of time.</h4>
             <h4>Step 3: Submit your vote. You can continue to vote for a different duration/ timeslot or go to bid. Note that you can only vote once in any given timeslot.</h4>    
-            <br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
         <div class="col-sm-2"></div>
     </div>
