@@ -174,47 +174,27 @@ exit();
     left:51%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> <?php if($minute_from_url=='1440'){ echo "&nbsp;1 day&nbsp;";}elseif($minute_from_url=='720'){ echo "12 hours"; }elseif($minute_from_url=='360'){ echo "6 hours"; }elseif($minute_from_url=='60'){ echo "1 hour"; }elseif($minute_from_url=='30'){ echo "30 minutes"; }elseif($minute_from_url=='15'){ echo "15 minutes"; }else{ echo "5 minutes";}?></h3>
+    <div style="position:absolute; 
+    top: 35%;
+    text-align:-webkit-center;
+    width:100%;">
     <form method="post"> 
     
 
-    <input type="text" name="nickname" placeholder="Enter Temporary Name" style="font-family:'Raleway';
-    position:absolute; 
-    top: 40%;
-    left:50%;
-    width: 55%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);" required/>
-
-    <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email" style="font-family:'Raleway';
-    position:absolute; 
-    top: 50%;
-    left:50%;
-    width: 55%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);" required/>
-
+    <input type="text" name="nickname" placeholder="Enter Temporary Name" style="font-family:'Raleway'; width: 55%;margin:10px 0px;" required/>
+    <br>
+    <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email" style="font-family:'Raleway'; width: 55%;margin:10px 0px;" required/>
+    <br>
     <textarea maxlength="50" name="description" rows="3" placeholder="How will you occupy this time?"
-    style="font-family:'Raleway';
-    position:absolute; 
-    top: 65%;
-    left:50%;
-    width: 55%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);" required></textarea>
+    style="font-family:'Raleway';width: 55%;margin:8px 0px;" required></textarea>
 
     
     <input type="submit" name="create_new_bid"
-            class="button" value="Send" style="position:absolute; 
-    top: 80%;
-    left:50%;
-    border-radius: 0px;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background:#00687f;
+            class="button" value="Send" style="background:#00687f;
     padding:5px;
     color:white;
-    font-family:Raleway;"/> 
-</form>
+    font-family:Raleway;border-radius:0px;"/> 
+</form><br><br><br></div>
 
 <div class="footer-div">
   <div class="col-img-1" style="background:#44474c;float:left;padding:10px;">
