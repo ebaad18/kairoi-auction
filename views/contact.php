@@ -102,7 +102,7 @@ textarea{
 .contact-button{
     font-size:24px !important;
     border-radius: 0px !important;
-    background:#00687 !important;
+    background:#2bbdcd !important;
     padding:5px !important;
     color:white !important;
     font-family:'Raleway' !important;

@@ -44,19 +44,18 @@ function kairoi_auction_main(){
 ?>
     <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
     <div class="nav-bar-icon" onclick="openNav()">&#9776;</div>
-    <div id="mobile-center" style="position:relative; max-height:80%; max-width:100%;text-align:center" >
+    <div class="mobile-center" style="position:relative; max-height:80%; max-width:100%;text-align:center" >
     
     
     <image id="bg-img" src="wp-content/plugins/kairoiauction/assets/main-page-bg-1-full.jpg" >
-
     <?php 
         if($count>1) //for when there are more than 1 bids submitted, only then will the code be executed
         {
-            for($i = 0 ; $i < 10 ; $i++){
+            for($i = 0 ; $i < 25 ; $i++){
             echo "<h5 class='floating' style='color:#00687f;
             position:absolute;
             z-index:4; 
-            left:".rand(0,90)."%;  top:".rand(0,85)."%; opacity:0.".rand(0,100)."'>".$array_for_display[(rand(0,$count-1))]."<br>";
+            left:".rand(0,90)."%;  top:".rand(-70,85)."%; opacity:0.".rand(0,100)."'>".$array_for_display[(rand(0,$count-1))]."<br>";
             }
         }?>
     
@@ -136,14 +135,14 @@ function kairoi_auction_main(){
             x.play();
             var element = document.getElementById("main-heading");
             element.classList.add("no-border");
-            var element = document.getElementById("mobile-center");
-            element.classList.add("mobile-center");
+            // var element = document.getElementById("mobile-center");
+            // element.classList.add("mobile-center");
             document.getElementById("bg-img").src = "wp-content/plugins/kairoiauction/assets/main-page-bg-2-full.png";
             for(let w = 0; w <7 ; w++){
                 var obj = document.getElementsByClassName("time-slot")[w];
                 obj.setAttribute("style", "color:black !important;pointer-events:auto;");
             }
-            for(let w = 0; w <30 ; w++){
+            for(let w = 0; w <25 ; w++){
                 var obj = document.getElementsByClassName("floating")[w];
                 obj.setAttribute("style", "display:none");
             }      

@@ -220,7 +220,7 @@ if($max_no==15){
     left:50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);"> Vote</h2> 
-    <image class="vote-slots-page-bg" src="../../wp-content/plugins/kairoiauction/assets/vote-bg-phone.png" style="height:1000px;">
+    <image class="vote-slots-page-bg" src="../../wp-content/plugins/kairoiauction/assets/vote-bg-phone.png">
     
     
 <?php 
