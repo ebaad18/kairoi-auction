@@ -100,7 +100,7 @@ textarea{
 
 }
 .contact-button{
-    font-size:24px;
+    font-size:24px !important;
     border-radius: 0px !important;
     background:#2bbdcd !important;
     padding:5px !important;
@@ -124,7 +124,7 @@ textarea{
         margin-top: 2%;
     }
     .contact-button{
-        font-size:16px;
+        font-size:16px !important;
     }
     h1,h2{
         font-size:99% !important;
