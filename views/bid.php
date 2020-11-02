@@ -59,7 +59,6 @@ else
 {
 $ip_address = $_SERVER['REMOTE_ADDR'];
 }
-echo $ip_address;
 $table_name = 'wp_kairoi_bids'; //getting all bids from this slot
 $details = $wpdb->get_results (
         "

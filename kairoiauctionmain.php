@@ -192,7 +192,7 @@ function kairoi_auction_main(){
             if (!elem.is(':visible')){
                 elem.fadeIn(Math.floor(Math.random()*700),fadeInDiv);
                 elem.css({
-                    'z-index':'999',
+                    'z-index':'800',
                     'position':'absolute',
                     'left':posx+'px',
                     'top':posy+'px',
