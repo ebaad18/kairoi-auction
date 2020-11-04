@@ -143,7 +143,7 @@ foreach($details as $key=>$val)
     {			
         $description = $val->description;
         //building display for voting form
-        echo "<input style='margin-left:30%;' checked type='radio' name='radio-buttons-for-voting' id='vote-".$key."' value='".$description."'>
+        echo "<input style='margin-left:25%;' checked type='radio' name='radio-buttons-for-voting' id='vote-".$key."' value='".$description."'>
                             <label class='voting-labels' for='".$key."'> ".$description."</label><br>";
     }
     echo "
