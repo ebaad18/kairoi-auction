@@ -208,9 +208,9 @@ exit();
     <br>
     <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email" style="font-family:'Raleway'; width: 55%;margin:10px 0px;" required/>
     <br>
-    <textarea maxlength="50" name="description" rows="3" placeholder="How will you occupy this time?"
+    <textarea maxlength="100" name="description" rows="3" placeholder="How will you occupy this time?"
     style="font-family:'Raleway';width: 55%;margin:8px 0px;" required></textarea>
-
+    <p style="font-size:11px;font-family:Raleway">Max Length: 100 characters</p>
     
     <input type="submit" name="create_new_bid"
             class="button" value="Send" style="background:#00687f;
